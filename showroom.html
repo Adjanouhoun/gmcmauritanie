@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+  <div class="body">
+    <header id="header" class="header-effect-shrink">
+      <div class="header-body border-top-0">
+        <div class="header-container container py-3 d-flex justify-content-between align-items-center">
+          <a href="index.html" class="fw-bold text-dark text-decoration-none">GMC</a>
+          <nav>
+            <ul class="nav nav-pills" id="mainNav">
+              <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+              <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+              <li class="nav-item"><a class="nav-link" href="realisations.html">Réalisations</a></li>
+              <li class="nav-item"><a class="nav-link active" href="showroom.html">Showroom</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="main py-5">
+      <div class="container">
+        <h1 class="mb-4">Showroom & fournitures</h1>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h2 class="h5">Tôles & profilés</h2>
+                <p class="text-muted mb-0">Tôles hangars, Hardox, poutrelles, cornières…</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h2 class="h5">Équipements industriels & miniers</h2>
+                <p class="text-muted mb-0">Pompes, vannes, flexibles, accessoires de process.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h2 class="h5">Pièces de rechange BTP</h2>
+                <p class="text-muted mb-0">Filtres, courroies, injecteurs, consommables atelier.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="bg-dark text-light py-4">
+      <div class="container small d-flex justify-content-between">
+        <div>© <span id="y"></span> GMC</div>
+        <div>Socogim TVZ N°001 B, Nouakchott</div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/theme.init.js"></script>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
+
