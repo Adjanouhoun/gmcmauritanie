@@ -43,13 +43,13 @@
 					<div class="header-row">
 						<div class="header-column">
 							<div class="header-row">
-								<div class="header-logo custom-header-logo">
-									<img class="logo" alt="Porto" width="150" height="112"
+								<div class="header-logo">
+									<img class="logo" alt="Porto" width="100" height="80"
 										src="img/demos/construction/logogmc.png">
-									<a href="#">
-										<img class="logo-sticky" alt="Porto" width="150" height="122"
-											src="img/demos/construction/logogmcdark.png">
-									</a>
+									 
+										<img class="logo-sticky" alt="Porto" width="100" height="80"
+											src="img/demos/construction/logogmc.png">
+									 
 								</div>
 							</div>
 						</div>
@@ -65,13 +65,14 @@
 												<li class="dropdown">
 													<a class="nav-link dropdown-toggle active" href="services.html">Nos Services</a>
 													<ul class="dropdown-menu">
-														<li><a class="dropdown-item" href="services.html#construction">Construction</a></li>
-														<li><a class="dropdown-item" href="services.html#maintenance">Maintenance</a></li>
-														<li><a class="dropdown-item" href="services.html#mecanique">Mécanique auto</a></li>
-														<li><a class="dropdown-item" href="services.html#location">Location & services</a></li>
+														<li><a class="dropdown-item" href="services.html#construction">Fabrication & installation – Construction métallique</a></li>
+														<li><a class="dropdown-item" href="services.html#tuyauterie">Tuyauterie industrielle</a></li>
+														<li><a class="dropdown-item" href="services.html#maintenanceindustrielle">Maintenance industrielle</a></li>
+                            <li><a class="dropdown-item" href="services.html#geniecivil">Bâtiment – Génie civil</a></li>  
+                            <li><a class="dropdown-item" href="services.html#mecaniqueauto">Mécanique automobile</a></li>
+														<li><a class="dropdown-item" href="services.html#location">Location & Hébergement</a></li>
 													</ul>
 												</li>
-												<li><a class="nav-link" href="realisations.html">Réalisations</a></li>
 												<li><a class="nav-link" href="formation.html">Formation</a></li>
 												<li><a class="nav-link" href="contact.html">Contact</a></li>
 											</ul>
@@ -204,7 +205,7 @@
             <ul class="nav list flex-column text-3-5 font-weight-medium mb-5-5">
               <li class="nav-item border border-color-grey-1 border-top-0 border-end-0 border-start-0 mb-0">
                 <a class="d-inline-flex align-items-center nav-link text-color-dark text-color-hover-primary py-3 ps-0" href="services.html">
-                  <i class="fas fa-chevron-right text-1 position-relative top-1 pe-3-5"></i> Vue d’ensemble
+                  <i class="fas fa-chevron-right text-1 position-relative top-1 pe-3-5"></i> Vue d'ensemble
                 </a>
               </li>
               <li class="nav-item border border-color-grey-1 border-top-0 border-end-0 border-start-0 mb-0">
@@ -218,32 +219,99 @@
                 </a>
               </li>
               <li class="nav-item border border-color-grey-1 border-top-0 border-end-0 border-start-0 mb-0">
-                <a class="nav-link text-color-primary py-3 ps-0" href="service-maintenance.html">
+                <a class="nav-link text-color-primary text-color-hover-primary py-3 ps-0" href="service-maintenance.html">
                   <i class="fas fa-chevron-right text-1 position-relative top-1 pe-3-5"></i> Maintenance industrielle
                 </a>
               </li>
-              <li class="nav-item mb-0">
+              <li class="nav-item border border-color-grey-1 border-top-0 border-end-0 border-start-0 mb-0">
                 <a class="nav-link text-color-dark text-color-hover-primary py-3 ps-0" href="service-genie-civil.html">
                   <i class="fas fa-chevron-right text-1 position-relative top-1 pe-3-5"></i> Bâtiment – Génie civil
+                </a>
+              </li>
+              <li class="nav-item mb-0">
+                <a class="nav-link text-color-dark py-3 ps-0" href="service-mecanique.html">
+                  <i class="fas fa-chevron-right text-1 position-relative top-1 pe-3-5"></i> Maintenance automobile
                 </a>
               </li>
             </ul>
 
             <h3 class="text-color-dark font-weight-bold text-transform-none text-5-5 line-height-1 mb-3-5">Nous contacter</h3>
             <p class="text-2 line-height-9">Écrivez-nous ou appelez-nous pour étudier votre besoin.</p>
-            <form class="contact-form form-style-3" action="php/contact-form.php" method="POST">
-              <div class="contact-form-success alert alert-success d-none mt-4"><strong>Merci !</strong> Votre message a été envoyé.</div>
-              <div class="contact-form-error alert alert-danger d-none mt-4"><strong>Erreur !</strong> L’envoi a échoué.<span class="mail-error-message text-1 d-block"></span></div>
-              <div class="row"><div class="form-group col mb-3-5"><input type="text" maxlength="100" class="form-control text-2 h-auto py-2-5" name="name" placeholder="Votre nom" required></div></div>
-              <div class="row"><div class="form-group col mb-3-5"><input type="email" maxlength="100" class="form-control text-2 h-auto py-2-5" name="email" placeholder="Votre e-mail" required></div></div>
-              <div class="row"><div class="form-group col mb-3-5"><input type="text" maxlength="100" class="form-control text-2 h-auto py-2-5" name="subject" placeholder="Sujet" required></div></div>
-              <div class="row"><div class="form-group col mb-3-5"><textarea maxlength="5000" rows="4" class="form-control text-2 h-auto py-2-5" name="message" placeholder="Message" required></textarea></div></div>
-              <div class="row"><div class="form-group col">
-                <button type="submit" class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-2 btn-px-4 btn-py-1">
-                  Envoyer <img width="27" height="27" src="img/demos/construction/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light ms-2'}"/>
-                </button>
-              </div></div>
-            </form>
+            <form class="contact-form form-style-3" action="send-mail.php" method="POST" id="contactForm">
+                <div class="alert alert-success d-none mt-4" id="contactSuccess">
+                  <strong>Merci !</strong> Votre message a été envoyé avec succès.
+                </div>
+                <div class="alert alert-danger d-none mt-4" id="contactError">
+                  <strong>Erreur !</strong> <span id="errorMessage">Une erreur est survenue.</span>
+                </div>
+              
+                <div class="row">
+                  <div class="form-group col mb-3-5">
+                    <input type="text" class="form-control text-2 h-auto py-2-5" name="name" placeholder="Votre nom" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col mb-3-5">
+                    <input type="email" class="form-control text-2 h-auto py-2-5" name="email" placeholder="Votre e-mail" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col mb-3-5">
+                    <input type="text" class="form-control text-2 h-auto py-2-5" name="subject" placeholder="Sujet" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col mb-3-5">
+                    <textarea rows="4" class="form-control text-2 h-auto py-2-5" name="message" placeholder="Message"
+                      required></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col">
+                    <button type="submit"
+                      class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-2 btn-px-4 btn-py-1">
+                      Envoyer
+                      <img width="27" height="27" src="img/demos/construction/icons/arrow-right.svg" alt="" data-icon
+                        data-plugin-options='{"onlySVG": true, "extraClass": "svg-fill-color-light ms-2"}' />
+                    </button>
+                  </div>
+                </div>
+              </form>
+              
+              <script>
+                document.getElementById('contactForm').addEventListener('submit', function (e) {
+                  e.preventDefault();
+
+                  const form = this;
+                  const formData = new FormData(form);
+                  const successAlert = document.getElementById('contactSuccess');
+                  const errorAlert = document.getElementById('contactError');
+                  const errorMessage = document.getElementById('errorMessage');
+
+                  // Cacher les alertes précédentes
+                  successAlert.classList.add('d-none');
+                  errorAlert.classList.add('d-none');
+
+                  fetch('send-mail.php', {
+                    method: 'POST',
+                    body: formData
+                  })
+                    .then(response => response.json())
+                    .then(data => {
+                      if (data.status === 'success') {
+                        successAlert.classList.remove('d-none');
+                        form.reset();
+                      } else {
+                        errorMessage.textContent = data.message;
+                        errorAlert.classList.remove('d-none');
+                      }
+                    })
+                    .catch(error => {
+                      errorMessage.textContent = "Une erreur est survenue. Veuillez réessayer.";
+                      errorAlert.classList.remove('d-none');
+                    });
+                });
+              </script>
           </aside>
         </div>
       </div>
