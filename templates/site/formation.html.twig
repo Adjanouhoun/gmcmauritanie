@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr"
+  data-style-switcher-options="{'showBordersStyle': true, 'showLayoutStyle': false, 'showBackgroundColor': false, 'borderRadius': '0', 'colorPrimary': '#E04622', 'colorSecondary': '#EEAB26', 'colorTertiary': '#EAEFF3', 'colorQuaternary': '#080808'}">
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>GMC | Formations</title>
+
+  <meta name="keywords" content="GMC, Formations professionnelles, Soudure, Tuyauterie, HSE, Rubber lining" />
+  <meta name="description" content="Formations professionnelles GMC : Soudure, Tuyauterie, Échafaudage, Calorifugeage, Froid industriel, Injection diesel, Hydromécanique, Électricité automobile, HSE, Rubber lining.">
+  <meta name="author" content="GMC">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="{{ asset('img/apple-touch-icon.png') }}">
+
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+  <!-- Web Fonts  -->
+  <link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light&amp;display=swap" rel="stylesheet" type="text/css">
+
+  <!-- Vendor CSS -->
+  <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/animate/animate.compat.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/simple-line-icons/css/simple-line-icons.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/owl.carousel/assets/owl.carousel.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/owl.carousel/assets/owl.theme.default.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/magnific-popup/magnific-popup.min.css') }}">
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="{{ asset('css/theme.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/theme-elements.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/theme-blog.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/theme-shop.css') }}">
+
+  <!-- Demo CSS -->
+  <link rel="stylesheet" href="{{ asset('css/demos/demo-construction.css') }}">
+
+  <!-- Skin CSS -->
+  <link id="skinCSS" rel="stylesheet" href="{{ asset('css/skins/skin-construction.css') }}">
+
+  <!-- Theme Custom CSS -->
+  <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T21B0FFW8M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T21B0FFW8M');
+  </script>
+</head>
+
+<body data-plugin-scroll-spy data-plugin-options="{'target': '#sidebar'}">
+  <div class="body">
+    <!-- HEADER -->
+    {% include 'site/partials/_header.html.twig' %}
+
+    <!-- MAIN -->
+    <div role="main" class="main">
+      <!-- HERO / BREADCRUMB -->
+      <section class="section section-height-3 border-0 m-0">
+        <div class="container position-relative pt-5 pb-5-5 mt-5 mb-5">
+          <div class="row justify-content-end pt-1 mt-lg-5">
+            <div class="col-7 col-md-5 position-relative">
+              <ul class="breadcrumb d-block ps-2 appear-animation" data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="200">
+                <li><a href="{{ path('app_home') }}">Accueil</a></li>
+                <li class="active">Formations</li>
+              </ul>
+              <h1 class="position-absolute top-100 left-0 text-color-light font-weight-bold text-6 line-height-3 text-end mt-5-5">
+                <span class="d-block position-relative z-index-1 pb-5 ps-lg-3 appear-animation"
+                      data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="800">Formations</span>
+                <span class="custom-svg-position-1 custom-svg-position-1-variation">
+                  <svg class="svg-fill-color-dark mt-1 appear-animation" data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="400"
+                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 859.45 88.44" preserveAspectRatio="none">
+                    <polyline points="7.27,84.78 855.17,84.78 855.17,4.79 84.74,4.79" />
+                  </svg>
+                </span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container custom-margin-1">
+        <div class="row gy-5 gy-lg-0 pt-3 pt-lg-0 mt-5 mt-lg-0">
+          <!-- MAIN CONTENT -->
+          <div class="col-lg-8 order-lg-2 mt-0 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="400">
+
+            <!-- Intro -->
+            <h2 class="text-color-dark font-weight-bold text-7 line-height-1 mb-4">Notre catalogue de formations</h2>
+            <p class="font-weight-light text-3-5 mb-5">
+              GMC propose à ses clients et partenaires des formations techniques de courtes durées pour le renforcement de capacités et la préparation pour la certification aux métiers.
+            </p>
+
+            <!-- Formation 1 : Soudure industrielle -->
+            <section id="formation-soudure" class="mb-5">
+              <h3 class="font-weight-bold text-color-dark text-5-5 mb-3">{{ trainings['soudure'].title }}</h3>
+              <p class="text-3-5 font-weight-light mb-3">{{ trainings['soudure'].description }}</p>
+              <ul class="text-3-5 ps-3 mb-3">
+                <li>Objectifs : {% if '\n' in trainings['soudure'].objectives %}<ul class="mt-2">{% for objective in trainings['soudure'].objectives|split('\n') %}{% if objective|trim %}<li>{{ objective }}</li>{% endif %}{% endfor %}</ul>{% else %}{{ trainings['soudure'].objectives }}{% endif %}</li>
+<li>Public : {{ trainings['soudure'].audience }}</li>
+                <li><strong>Durée indicative : {{ trainings['soudure'].duration }}</strong></li>
+              </ul>
+              {% if trainings['soudure'].note %}<p class="text-3-5 font-weight-medium text-primary mb-4"><i class="fas fa-certificate me-2"></i>{{ trainings['soudure'].note }}</p>{% endif %}
+              <a href="{{ path('app_contact') }}" class="btn btn-primary btn-modern">Obtenir le programme détaillé</a>
+            </section>
+
+            <!-- Formation 2 : Tuyauterie industrielle -->
+            <section id="formation-tuyauterie" class="mb-5">
+              <h3 class="font-weight-bold text-color-dark text-5-5 mb-3">{{ trainings['tuyauterie'].title }}</h3>
+              <p class="text-3-5 font-weight-light mb-3">{{ trainings['tuyauterie'].description }}</p>
+              <ul class="text-3-5 ps-3 mb-4">
+                <li>Objectifs : {% if '\n' in trainings['tuyauterie'].objectives %}<ul class="mt-2">{% for objective in trainings['tuyauterie'].objectives|split('\n') %}{% if objective|trim %}<li>{{ objective }}</li>{% endif %}{% endfor %}</ul>{% else %}{{ trainings['tuyauterie'].objectives }}{% endif %}</li>
+<li>Public : {{ trainings['tuyauterie'].audience }}</li>
+                <li><strong>Durée indicative : {{ trainings['tuyauterie'].duration }}</strong></li>
+              </ul>
+              {% if trainings['tuyauterie'].note %}<p class="text-3-5 font-weight-medium text-primary mb-4"><i class="fas fa-certificate me-2"></i>{{ trainings['tuyauterie'].note }}</p>{% endif %}
+<a href="{{ path('app_contact') }}" class="btn btn-primary btn-modern">Obtenir le programme détaillé</a>
+            </section>
+
+            <!-- Formation 3 : Échafaudage -->
+            <section id="formation-echafaudage" class="mb-5">
+              <h3 class="font-weight-bold text-color-dark text-5-5 mb-3">{{ trainings['echafaudage'].title }}</h3>
+              <p class="text-3-5 font-weight-light mb-3">{{ trainings['echafaudage'].description }}</p>
+              <ul class="text-3-5 ps-3 mb-3">
+                <li>Objectifs : {% if '\n' in trainings['echafaudage'].objectives %}<ul class="mt-2">{% for objective in trainings['echafaudage'].objectives|split('\n') %}{% if objective|trim %}<li>{{ objective }}</li>{% endif %}{% endfor %}</ul>{% else %}{{ trainings['echafaudage'].objectives }}{% endif %}</li>
+<li>Public : {{ trainings['echafaudage'].audience }}</li>
+                <li><strong>Durée indicative : {{ trainings['echafaudage'].duration }}</strong></li>
+              </ul>
+              {% if trainings['echafaudage'].note %}<p class="text-3-5 font-weight-medium text-primary mb-4"><i class="fas fa-certificate me-2"></i>{{ trainings['echafaudage'].note }}</p>{% endif %}
+              <a href="{{ path('app_contact') }}" class="btn btn-primary btn-modern">Obtenir le programme détaillé</a>
+            </section>
+
+            <!-- Formation 4 : Calorifugeage -->
+            <section id="formation-calorifugeage" class="mb-5">
+              <h3 class="font-weight-bold text-color-dark text-5-5 mb-3">{{ trainings['calorifugeage'].title }}</h3>
+              <p class="text-3-5 font-weight-light mb-3">{{ trainings['calorifugeage'].description }}</p>
+              <ul class="text-3-5 ps-3 mb-4">
+                <li>Objectifs : {% if '\n' in trainings['calorifugeage'].objectives %}<ul class="mt-2">{% for objective in trainings['calorifugeage'].objectives|split('\n') %}{% if objective|trim %}<li>{{ objective }}</li>{% endif %}{% endfor %}</ul>{% else %}{{ trainings['calorifugeage'].objectives }}{% endif %}</li>
+<li>Public : {{ trainings['calorifugeage'].audience }}</li>
+                <li><strong>Durée indicative : {{ trainings['calorifugeage'].duration }}</strong></li>
+              </ul>
+              {% if trainings['calorifugeage'].note %}<p class="text-3-5 font-weight-medium text-primary mb-4"><i class="fas fa-certificate me-2"></i>{{ trainings['calorifugeage'].note }}</p>{% endif %}
+<a href="{{ path('app_contact') }}" class="btn btn-primary btn-modern">Obtenir le programme détaillé</a>
+            </section>
+
+            <!-- Formation 5 : Froid industriel -->
+            <section id="formation-froid" class="mb-5">
+              <img src="{{ asset('img/demos/construction/generic/generic-3.jpg') }}" class="img-fluid mb-4" alt="Froid industriel">
+              <h3 class="font-weight-bold text-color-dark text-5-5 mb-3">{{ trainings['froid'].title }}</h3>
+              <p class="text-3-5 font-weight-light mb-3">{{ trainings['froid'].description }}</p>
+              <ul class="text-3-5 ps-3 mb-4">
+                <li>Objectifs : {% if '\n' in trainings['froid'].objectives %}<ul class="mt-2">{% for objective in trainings['froid'].objectives|split('\n') %}{% if objective|trim %}<li>{{ objective }}</li>{% endif %}{% endfor %}</ul>{% else %}{{ trainings['froid'].objectives }}{% endif %}</li>
+<li>Public : {{ trainings['froid'].audience }}</li>
+                <li><strong>Durée indicative : {{ trainings['froid'].duration }}</strong></li>
+              </ul>
+              {% if trainings['froid'].note %}<p class="text-3-5 font-weight-medium text-primary mb-4"><i class="fas fa-certificate me-2"></i>{{ trainings['froid'].note }}</p>{% endif %}
+<a href="{{ path('app_contact') }}" class="btn btn-primary btn-modern">Obtenir le programme détaillé</a>
+            </section>
+
+            <!-- Formation 6 : Injection diesel -->
+            <section id="formation-injection-diesel" class="mb-5">
+              <h3 class="font-weight-bold text-color-dark text-5-5 mb-3">{{ trainings['injection-diesel'].title }}</h3>
+              <p class="text-3-5 font-weight-light mb-3">{{ trainings['injection-diesel'].description }}</p>
+              <ul class="text-3-5 ps-3 mb-4">
+                <li>Objectifs : {% if '\n' in trainings['injection-diesel'].objectives %}<ul class="mt-2">{% for objective in trainings['injection-diesel'].objectives|split('\n') %}{% if objective|trim %}<li>{{ objective }}</li>{% endif %}{% endfor %}</ul>{% else %}{{ trainings['injection-diesel'].objectives }}{% endif %}</li>
+<li>Public : {{ trainings['injection-diesel'].audience }}</li>
+                <li><strong>Durée indicative : {{ trainings['injection-diesel'].duration }}</strong></li>
+              </ul>
+              {% if trainings['injection-diesel'].note %}<p class="text-3-5 font-weight-medium text-primary mb-4"><i class="fas fa-certificate me-2"></i>{{ trainings['injection-diesel'].note }}</p>{% endif %}
+<a href="{{ path('app_contact') }}" class="btn btn-primary btn-modern">Obtenir le programme détaillé</a>
+            </section>
+
+            <!-- Formation 7 : Hydromécanique -->
+            <section id="formation-hydromecanique" class="mb-5">
+              <h3 class="font-weight-bold text-color-dark text-5-5 mb-3">{{ trainings['hydromecanique'].title }}</h3>
+              <p class="text-3-5 font-weight-light mb-3">{{ trainings['hydromecanique'].description }}</p>
+              <ul class="text-3-5 ps-3 mb-4">
+                <li>Objectifs : {% if '\n' in trainings['hydromecanique'].objectives %}<ul class="mt-2">{% for objective in trainings['hydromecanique'].objectives|split('\n') %}{% if objective|trim %}<li>{{ objective }}</li>{% endif %}{% endfor %}</ul>{% else %}{{ trainings['hydromecanique'].objectives }}{% endif %}</li>
+<li>Public : {{ trainings['hydromecanique'].audience }}</li>
+                <li><strong>Durée indicative : {{ trainings['hydromecanique'].duration }}</strong></li>
+              </ul>
+              {% if trainings['hydromecanique'].note %}<p class="text-3-5 font-weight-medium text-primary mb-4"><i class="fas fa-certificate me-2"></i>{{ trainings['hydromecanique'].note }}</p>{% endif %}
+<a href="{{ path('app_contact') }}" class="btn btn-primary btn-modern">Obtenir le programme détaillé</a>
+            </section>
+
+            <!-- Formation 8 : Électricité automobile -->
+            <section id="formation-electricite-auto" class="mb-5">
+              <h3 class="font-weight-bold text-color-dark text-5-5 mb-3">{{ trainings['electricite-auto'].title }}</h3>
+              <p class="text-3-5 font-weight-light mb-3">{{ trainings['electricite-auto'].description }}</p>
+              <ul class="text-3-5 ps-3 mb-4">
+                <li>Objectifs : {% if '\n' in trainings['electricite-auto'].objectives %}<ul class="mt-2">{% for objective in trainings['electricite-auto'].objectives|split('\n') %}{% if objective|trim %}<li>{{ objective }}</li>{% endif %}{% endfor %}</ul>{% else %}{{ trainings['electricite-auto'].objectives }}{% endif %}</li>
+<li>Public : {{ trainings['electricite-auto'].audience }}</li>
+                <li><strong>Durée indicative : {{ trainings['electricite-auto'].duration }}</strong></li>
+              </ul>
+              {% if trainings['electricite-auto'].note %}<p class="text-3-5 font-weight-medium text-primary mb-4"><i class="fas fa-certificate me-2"></i>{{ trainings['electricite-auto'].note }}</p>{% endif %}
+<a href="{{ path('app_contact') }}" class="btn btn-primary btn-modern">Obtenir le programme détaillé</a>
+            </section>
+
+            <!-- NOUVELLE Formation 9 : Rubber lining -->
+            <section id="formation-rubber-lining" class="mb-5">
+              <h3 class="font-weight-bold text-color-dark text-5-5 mb-3">{{ trainings['rubber-lining'].title }}</h3>
+              <p class="text-3-5 font-weight-light mb-3">{{ trainings['rubber-lining'].description }}</p>
+              <ul class="text-3-5 ps-3 mb-3">
+                <li>Objectifs : {% if '\n' in trainings['rubber-lining'].objectives %}<ul class="mt-2">{% for objective in trainings['rubber-lining'].objectives|split('\n') %}{% if objective|trim %}<li>{{ objective }}</li>{% endif %}{% endfor %}</ul>{% else %}{{ trainings['rubber-lining'].objectives }}{% endif %}</li>
+<li>Public : {{ trainings['rubber-lining'].audience }}</li>
+                <li><strong>Durée indicative : {{ trainings['rubber-lining'].duration }}</strong></li>
+              </ul>
+              {% if trainings['rubber-lining'].note %}<p class="text-3-5 font-weight-medium text-primary mb-4"><i class="fas fa-certificate me-2"></i>{{ trainings['rubber-lining'].note }}</p>{% endif %}
+              <a href="{{ path('app_contact') }}" class="btn btn-primary btn-modern">Obtenir le programme détaillé</a>
+            </section>
+
+            <!-- NOUVELLE Formation 10 : HSE -->
+            <section id="formation-hse" class="mb-5">
+              <h3 class="font-weight-bold text-color-dark text-5-5 mb-3">{{ trainings['hse'].title }}</h3>
+              <p class="text-3-5 font-weight-light mb-3">{{ trainings['hse'].description }}</p>
+              <ul class="text-3-5 ps-3 mb-3">
+                <li>Objectifs : {% if '\n' in trainings['hse'].objectives %}<ul class="mt-2">{% for objective in trainings['hse'].objectives|split('\n') %}{% if objective|trim %}<li>{{ objective }}</li>{% endif %}{% endfor %}</ul>{% else %}{{ trainings['hse'].objectives }}{% endif %}</li>
+<li>Public : {{ trainings['hse'].audience }}</li>
+                <li><strong>Durée indicative : {{ trainings['hse'].duration }}</strong></li>
+              </ul>
+              {% if trainings['hse'].note %}<p class="text-3-5 font-weight-medium text-primary mb-4"><i class="fas fa-certificate me-2"></i>{{ trainings['hse'].note }}</p>{% endif %}
+              <a href="{{ path('app_contact') }}" class="btn btn-primary btn-modern">Obtenir le programme détaillé</a>
+            </section>
+
+            <!-- NOUVELLE Formation 11 : Électricité industrielle -->
+            <section id="formation-electricite-industrielle" class="mb-5">
+              <h3 class="font-weight-bold text-color-dark text-5-5 mb-3">{{ trainings['electricite-industrielle'].title }}</h3>
+              <p class="text-3-5 font-weight-light mb-3">{{ trainings['electricite-industrielle'].description }}</p>
+              <ul class="text-3-5 ps-3 mb-4">
+                <li>Objectifs : {% if '\n' in trainings['electricite-industrielle'].objectives %}<ul class="mt-2">{% for objective in trainings['electricite-industrielle'].objectives|split('\n') %}{% if objective|trim %}<li>{{ objective }}</li>{% endif %}{% endfor %}</ul>{% else %}{{ trainings['electricite-industrielle'].objectives }}{% endif %}</li>
+<li>Public : {{ trainings['electricite-industrielle'].audience }}</li>
+                <li><strong>Durée indicative : {{ trainings['electricite-industrielle'].duration }}</strong></li>
+              </ul>
+              {% if trainings['electricite-industrielle'].note %}<p class="text-3-5 font-weight-medium text-primary mb-4"><i class="fas fa-certificate me-2"></i>{{ trainings['electricite-industrielle'].note }}</p>{% endif %}
+<a href="{{ path('app_contact') }}" class="btn btn-primary btn-modern">Obtenir le programme détaillé</a>
+            </section>
+
+            <!-- CTA -->
+            <div class="bg-color-grey p-4 p-md-5 mt-4">
+              <div class="row align-items-center">
+                <div class="col-lg-8">
+                  <h4 class="text-color-dark font-weight-bold mb-2">Un besoin spécifique ?</h4>
+                  <p class="mb-0 text-3-5">Nous concevons aussi des parcours sur-mesure (contenu, durée, planning) pour vos équipes.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                  <a href="{{ path('app_contact') }}" class="btn btn-primary btn-modern">Demander un devis</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- SIDEBAR -->
+          <div class="col-lg-4 order-lg-1 position-relative">
+            <aside class="sidebar" id="sidebar" data-plugin-sticky data-plugin-options="{'minWidth': 991, 'containerSelector': '.container', 'padding': {'top': 110}}">
+              <ul class="nav list flex-column text-3-5 font-weight-medium mb-5-5">
+                <li class="nav-item border border-color-grey-1 border-top-0 border-end-0 border-start-0 mb-0">
+                  <a class="d-inline-flex align-items-center nav-link text-color-dark text-color-hover-primary py-3 ps-0 active"
+                     data-hash data-hash-offset="0" data-hash-offset-lg="110" href="#formation-soudure">
+                    <i class="fas fa-chevron-right text-1 position-relative top-1 pe-3-5"></i>{{ trainings['soudure'].shortTitle }}</a>
+                </li>
+                <li class="nav-item border border-color-grey-1 border-top-0 border-end-0 border-start-0 mb-0">
+                  <a class="nav-link text-color-dark text-color-hover-primary py-3 ps-0" data-hash data-hash-offset="0" data-hash-offset-lg="110" href="#formation-tuyauterie">
+                    <i class="fas fa-chevron-right text-1 position-relative top-1 pe-3-5"></i>{{ trainings['tuyauterie'].shortTitle }}</a>
+                </li>
+                <li class="nav-item border border-color-grey-1 border-top-0 border-end-0 border-start-0 mb-0">
+                  <a class="nav-link text-color-dark text-color-hover-primary py-3 ps-0" data-hash data-hash-offset="0" data-hash-offset-lg="110" href="#formation-echafaudage">
+                    <i class="fas fa-chevron-right text-1 position-relative top-1 pe-3-5"></i>{{ trainings['echafaudage'].shortTitle }}</a>
+                </li>
+                <li class="nav-item border border-color-grey-1 border-top-0 border-end-0 border-start-0 mb-0">
+                  <a class="nav-link text-color-dark text-color-hover-primary py-3 ps-0" data-hash data-hash-offset="0" data-hash-offset-lg="110" href="#formation-calorifugeage">
+                    <i class="fas fa-chevron-right text-1 position-relative top-1 pe-3-5"></i>{{ trainings['calorifugeage'].shortTitle }}</a>
+                </li>
+                <li class="nav-item border border-color-grey-1 border-top-0 border-end-0 border-start-0 mb-0">
+                  <a class="nav-link text-color-dark text-color-hover-primary py-3 ps-0" data-hash data-hash-offset="0" data-hash-offset-lg="110" href="#formation-froid">
+                    <i class="fas fa-chevron-right text-1 position-relative top-1 pe-3-5"></i>{{ trainings['froid'].shortTitle }}</a>
+                </li>
+                <li class="nav-item border border-color-grey-1 border-top-0 border-end-0 border-start-0 mb-0">
+                  <a class="nav-link text-color-dark text-color-hover-primary py-3 ps-0" data-hash data-hash-offset="0" data-hash-offset-lg="110" href="#formation-injection-diesel">
+                    <i class="fas fa-chevron-right text-1 position-relative top-1 pe-3-5"></i>{{ trainings['injection-diesel'].shortTitle }}</a>
+                </li>
+                <li class="nav-item border border-color-grey-1 border-top-0 border-end-0 border-start-0 mb-0">
+                  <a class="nav-link text-color-dark text-color-hover-primary py-3 ps-0" data-hash data-hash-offset="0" data-hash-offset-lg="110" href="#formation-hydromecanique">
+                    <i class="fas fa-chevron-right text-1 position-relative top-1 pe-3-5"></i>{{ trainings['hydromecanique'].shortTitle }}</a>
+                </li>
+                <li class="nav-item border border-color-grey-1 border-top-0 border-end-0 border-start-0 mb-0">
+                  <a class="nav-link text-color-dark text-color-hover-primary py-3 ps-0" data-hash data-hash-offset="0" data-hash-offset-lg="110" href="#formation-electricite-auto">
+                    <i class="fas fa-chevron-right text-1 position-relative top-1 pe-3-5"></i>{{ trainings['electricite-auto'].shortTitle }}</a>
+                </li>
+                <li class="nav-item border border-color-grey-1 border-top-0 border-end-0 border-start-0 mb-0">
+                  <a class="nav-link text-color-dark text-color-hover-primary py-3 ps-0" data-hash data-hash-offset="0" data-hash-offset-lg="110" href="#formation-rubber-lining">
+                    <i class="fas fa-chevron-right text-1 position-relative top-1 pe-3-5"></i>{{ trainings['rubber-lining'].shortTitle }}</a>
+                </li>
+                <li class="nav-item border border-color-grey-1 border-top-0 border-end-0 border-start-0 mb-0">
+                  <a class="nav-link text-color-dark text-color-hover-primary py-3 ps-0" data-hash data-hash-offset="0" data-hash-offset-lg="110" href="#formation-hse">
+                    <i class="fas fa-chevron-right text-1 position-relative top-1 pe-3-5"></i>{{ trainings['hse'].shortTitle }}</a>
+                </li>
+                <li class="nav-item mb-0">
+                  <a class="nav-link text-color-dark text-color-hover-primary py-3 ps-0" data-hash data-hash-offset="0" data-hash-offset-lg="110" href="#formation-electricite-industrielle">
+                    <i class="fas fa-chevron-right text-1 position-relative top-1 pe-3-5"></i>{{ trainings['electricite-industrielle'].shortTitle }}</a>
+                </li>
+              </ul>
+
+              <h3 class="text-color-dark font-weight-bold text-transform-none text-5-5 line-height-1 mb-3-5">Nous contacter</h3>
+              <p class="text-2 line-height-9">Envoyez-nous un message pour recevoir les programmes détaillés et planifier vos sessions.</p>
+              
+              <form class="form-style-3" data-gmc-contact action="{{ path('app_contact_send') }}" method="POST" id="contactForm">
+<input type="hidden" name="_token" value="{{ csrf_token('contact') }}">
+                <div class="alert alert-success d-none mt-4" id="contactSuccess" role="status">
+                  <strong>Merci !</strong> Votre message a été envoyé avec succès.
+                </div>
+                <div class="alert alert-danger d-none mt-4" id="contactError" role="alert">
+                  <strong>Erreur !</strong> <span id="errorMessage">Une erreur est survenue.</span>
+                </div>
+              
+                <div class="row">
+                  <div class="form-group col mb-3-5">
+                    <input type="text" class="form-control text-2 h-auto py-2-5" name="name" maxlength="120" placeholder="Votre nom" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col mb-3-5">
+                    <input type="email" class="form-control text-2 h-auto py-2-5" name="email" maxlength="254" placeholder="Votre e-mail" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col mb-3-5">
+                    <select name="subject" class="form-control text-2 h-auto py-2-5" required>
+                      <option value="">Choisir une formation…</option>
+                      {% for training in trainings %}<option value="{{ training.shortTitle }}">{{ training.shortTitle }}</option>{% endfor %}
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col mb-3-5">
+                    <textarea rows="4" class="form-control text-2 h-auto py-2-5" name="message" maxlength="10000" placeholder="Message"
+                      required></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col">
+                    <button type="submit"
+                      class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-2 btn-px-4 btn-py-1">
+                      Envoyer
+                      <img width="27" height="27" src="{{ asset('img/demos/construction/icons/arrow-right.svg') }}" alt="" data-icon
+                        data-plugin-options='{"onlySVG": true, "extraClass": "svg-fill-color-light ms-2"}' />
+                    </button>
+                  </div>
+                </div>
+              </form>
+              
+              
+              
+               
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <div class="position-relative pb-5 d-sm-none d-xl-block">
+        <div class="position-absolute transform3dy-n50 left-0">
+          <div class="appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="1500" data-appear-animation-duration="1500ms">
+            <div class="custom-square-1 bg-primary mt-0 mb-5"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    {% include 'site/partials/_footer.html.twig' %}
+  </div>
+
+  <!-- Vendor -->
+  <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="{{ asset('vendor/plugins/js/plugins.min.js') }}"></script>
+
+  <!-- Theme Base, Components and Settings -->
+  <script src="{{ asset('js/theme.js') }}"></script>
+
+  <!-- Current Page Vendor and Views -->
+  <script src="{{ asset('js/views/view.contact.js') }}"></script>
+
+  <!-- Theme Initialization Files -->
+  <script src="{{ asset('js/theme.init.js') }}"></script>
+<script src="{{ asset('js/contact.js') }}" defer></script>
+</body>
+</html>

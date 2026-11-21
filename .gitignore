@@ -1,9 +1,27 @@
-.DS_Store
-**/.DS_Store
-.env.local
-.env.*.local
-/vendor/
-/node_modules/
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
 /var/
-/public/uploads/
-Untitled.ipynb
+/vendor/
+###< symfony/framework-bundle ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+/.phpunit.cache/
+###< phpunit/phpunit ###
+
+###> symfony/asset-mapper ###
+/public/assets/
+/assets/vendor/
+###< symfony/asset-mapper ###
+
+# Local files and legacy mail credentials
+.DS_Store
+/.env.dev
+/send-mail.php
+/PHPMailer/
+/Untitled.ipynb

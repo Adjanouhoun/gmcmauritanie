@@ -1,0 +1,7 @@
+{% extends 'admin/base.html.twig' %}
+{% block title %}Formations · GMC{% endblock %}
+{% block body %}
+<section class="panel"><h1 class="h3">Formations</h1><p class="text-secondary">Gérez les onze formations du catalogue et les six aperçus présentés sur l’accueil.</p>
+<div class="list-group mt-4">{% for training in trainings %}<a class="list-group-item list-group-item-action py-3 d-flex flex-wrap justify-content-between gap-2" href="{{ path('admin_training_edit', {id: training.id}) }}"><span><strong>{{ training.shortTitle }}</strong><span class="d-block text-secondary">{{ training.duration }}{% if training.featured %} · Présente sur l’accueil{% endif %}</span></span><span>Modifier</span></a>{% else %}<p>Aucune formation disponible.</p>{% endfor %}</div>
+</section>
+{% endblock %}

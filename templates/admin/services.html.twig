@@ -1,0 +1,7 @@
+{% extends 'admin/base.html.twig' %}
+{% block title %}Services · GMC{% endblock %}
+{% block body %}
+<section class="panel"><h1 class="h3">Services</h1><p class="text-secondary">Gérez les présentations des six services sur l’accueil et la page Services.</p>
+<div class="list-group mt-4">{% for service in services %}<a class="list-group-item list-group-item-action py-3 d-flex flex-wrap justify-content-between gap-2" href="{{ path('admin_service_edit', {id: service.id}) }}"><strong>{{ service.title }}</strong><span>Modifier</span></a>{% else %}<p>Aucun service disponible.</p>{% endfor %}</div>
+</section>
+{% endblock %}

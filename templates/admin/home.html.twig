@@ -1,0 +1,12 @@
+{% extends 'admin/base.html.twig' %}
+{% block body %}
+<section class="panel">
+<h1 class="h3">Présentation de l’accueil</h1><p class="text-secondary mb-4">Modifiez le titre et le texte de la section « Qui sommes-nous ? ». Les changements seront visibles sur le site dès l’enregistrement.</p>
+{% if error %}<div class="alert alert-danger" role="alert">{{ error }}</div>{% endif %}
+<form method="post" action="{{ path('admin_home') }}">
+<input type="hidden" name="_token" value="{{ csrf_token('homepage') }}"><input type="hidden" name="version" value="{{ values.version }}">
+<div class="mb-4"><label class="form-label" for="title">Titre de la section</label><input id="title" class="form-control" name="title" maxlength="120" value="{{ values.title }}" required></div>
+<div class="mb-4"><label class="form-label" for="presentation">Texte de présentation</label><textarea id="presentation" class="form-control" name="presentation" maxlength="3000" required>{{ values.presentation }}</textarea><div class="form-text">3 000 caractères maximum. Le texte est affiché sans mise en forme HTML.</div></div>
+<button class="btn btn-primary">Enregistrer</button>
+</form></section>
+{% endblock %}

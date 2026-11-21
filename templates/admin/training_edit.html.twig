@@ -1,0 +1,26 @@
+{% extends 'admin/base.html.twig' %}
+{% block title %}Modifier une formation · GMC{% endblock %}
+{% block body %}
+<section class="panel"><h1 class="h3">Modifier la formation</h1><p class="text-secondary">{{ training.shortTitle }}</p>
+{% if error %}<div class="alert alert-danger" role="alert">{{ error }}</div>{% endif %}
+<form method="post" action="{{ path('admin_training_edit', {id: training.id}) }}">
+<input type="hidden" name="_token" value="{{ csrf_token('training_' ~ training.id) }}"><input type="hidden" name="version" value="{{ values.version }}">
+{% set fields = {
+ title: ['Titre complet', 200, false, true],
+ shortTitle: ['Titre court (navigation et accueil)', 120, false, true],
+ description: ['Description du programme', 3000, true, true],
+ objectives: ['Objectifs — un par ligne', 3000, true, true],
+ audience: ['Public concerné', 500, true, true],
+ duration: ['Durée indicative du catalogue', 120, false, true],
+ note: ['Mention complémentaire (facultative)', 500, true, false]
+} %}
+{% if training.featured %}{% set fields = fields|merge({summary: ['Résumé sur l’accueil', 500, true, true], homeDuration: ['Durée courte sur l’accueil', 120, false, true]}) %}{% endif %}
+{% for key, field in fields %}
+<div class="mb-4"><label class="form-label" for="{{ key }}">{{ field[0] }}</label>
+{% if field[2] %}<textarea class="form-control" id="{{ key }}" name="{{ key }}" maxlength="{{ field[1] }}" {% if field[3] %}required{% endif %}>{{ attribute(values, key) }}</textarea>
+{% else %}<input class="form-control" id="{{ key }}" name="{{ key }}" value="{{ attribute(values, key) }}" maxlength="{{ field[1] }}" {% if field[3] %}required{% endif %}>{% endif %}
+<div class="form-text">{{ field[1] }} caractères maximum. Texte sans mise en forme HTML.</div></div>
+{% endfor %}
+<div class="d-flex gap-3 align-items-center"><button class="btn btn-primary">Enregistrer</button><a href="{{ path('admin_trainings') }}">Annuler</a></div>
+</form></section>
+{% endblock %}

@@ -1,0 +1,864 @@
+{
+  "entries": [
+    {
+      "type": "slide",
+      "slug": "slide-1",
+      "title": "GMC Mauritanie",
+      "data": {
+        "image": "@img/slider/quisommesnous.png",
+        "mobile": null,
+        "text": "Votre partenaire de confiance pour la construction métallique, la mécanique et la formation technique en Mauritanie",
+        "button": "Découvrir nos services",
+        "link": "/services"
+      },
+      "position": 0
+    },
+    {
+      "type": "slide",
+      "slug": "slide-2",
+      "title": "GMC Mauritanie",
+      "data": {
+        "image": "@img/slider/slide1.jpeg",
+        "mobile": null,
+        "text": "Votre partenaire de confiance pour la construction métallique, la mécanique et la formation technique en Mauritanie",
+        "button": "Découvrir nos services",
+        "link": "/services"
+      },
+      "position": 1
+    },
+    {
+      "type": "slide",
+      "slug": "slide-3",
+      "title": "GMC Mauritanie",
+      "data": {
+        "image": "@img/slider/slide2.jpeg",
+        "mobile": null,
+        "text": "Votre partenaire de confiance pour la construction métallique, la mécanique et la formation technique en Mauritanie",
+        "button": "Découvrir nos services",
+        "link": "/services"
+      },
+      "position": 2
+    },
+    {
+      "type": "home",
+      "slug": "main",
+      "title": "Qui sommes-nous ?",
+      "data": {
+        "intro": "",
+        "secondary": "<p>Basés à Nouakchott, nous servons des clients nationaux et internationaux.</p>",
+        "highlight": "Efficacité, sécurité et respect des délais sont nos marqueurs.",
+        "button": "En savoir plus",
+        "link": "/a-propos",
+        "servicesTitle": "Nos services",
+        "servicesIntro": "Des pôles d’expertise pour l’industrie, les mines et l’énergie en Mauritanie.",
+        "trainingTitle": "Notre offre de formation",
+        "trainingIntro": "Des formations techniques pour renforcer les compétences de vos équipes.",
+        "partnersTitle": "Clients & Partenaires",
+        "slidesVisible": true,
+        "servicesVisible": true,
+        "trainingVisible": true,
+        "partnersVisible": true
+      },
+      "position": 0
+    },
+    {
+      "type": "service",
+      "slug": "construction-metallique",
+      "title": "construction-metallique",
+      "data": {
+        "icon": "@img/slider/svgicon/construction-ladder-svgrepo-com.svg",
+        "summary": "",
+        "tagline": "",
+        "body": "\n          <h2>Fabrication &amp; installation en construction métallique</h2>\n          <p>\n            Conception, préfabrication en atelier et montage sur site de structures métalliques : <strong>charpentes, mezzanines, passerelles, escaliers, garde-corps, bardages</strong>. Traçabilité des aciers, contrôle dimensionnel, soudage conforme aux normes en vigueur.\n          </p>\n          <p>\n            Nos équipes interviennent en environnement industriel et tertiaire, en coordination TCE. Gestion des levages, plan de prévention, contrôles CND au besoin (VT, PT, MT). Dossier des ouvrages exécutés (DOE) livré en fin de chantier.\n          </p>\n          \n          \n          \n            \n              \n                <h4>\n                  <a>\n                    1 - Quelles normes et certifications appliquez-vous ?\n                  </a>\n                </h4>\n              \n              \n                \n                  Procédures de soudage (QMOS/WPS), contrôles visuels, et partenaires certifiés pour CND. Traçabilité matière et marquage CE des composants conformément au cahier des charges.\n                \n              \n            \n            \n              \n                <h4>\n                  <a>\n                    2 - Gérez-vous la conception et les plans ?\n                  </a>\n                </h4>\n              \n              \n                \n                  Oui : relevés, notes de calcul, plans d’exécution et plans de montage (DOE fourni). Coordination avec BET structure si requis.\n                \n              \n            \n            \n              \n                <h4>\n                  <a>\n                    3 - Intervenez-vous en site occupé ?\n                  </a>\n                </h4>\n              \n              \n                \n                  Oui, avec phasage, balisage, consignations et horaires adaptés pour minimiser l’impact sur l’exploitation.\n                \n              \n            \n          \n\n          \n          <p>Notre méthode garantit qualité, délais et sécurité :</p>\n          \n            \n              <strong>1</strong>\n              \n                <h4>Études &amp; préparation</h4>\n                <p>Relevés, plans, notes de calcul, PPSPS, plan de levage.</p>\n              \n            \n            \n              <strong>2</strong>\n              \n                <h4>Fabrication atelier</h4>\n                <p>Découpe, assemblage, soudage, contrôle dimensionnel &amp; finitions.</p>\n              \n            \n            \n              <strong>3</strong>\n              \n                <h4>Montage &amp; réception</h4>\n                <p>Levage, réglage, ancrages, PV de réception et DOE.</p>\n              \n            \n          \n        ",
+        "image": null,
+        "gallery": [],
+        "featured": true,
+        "seoTitle": "",
+        "seoDescription": ""
+      },
+      "position": 0
+    },
+    {
+      "type": "service",
+      "slug": "tuyauterie",
+      "title": "tuyauterie",
+      "data": {
+        "icon": "@img/slider/svgicon/industrial-pipe-svgrepo-com.svg",
+        "summary": "",
+        "tagline": "",
+        "body": "\n          <h2>Études, fabrication &amp; pose</h2>\n          <p>\n            Isométriques, débits, supports. Préfabrication atelier (acier carbone, inox 304/316, galvanisé) et montage sur site. <strong>Épreuves hydrauliques/pneumatiques</strong>, passivation inox, marquages et repérages.\n          </p>\n          <p>\n            Interventions utilités &amp; process (vapeur, air, eau glacée, incendie, CIP). Soudeurs qualifiés, traçabilité des soudures et <strong>CND</strong> (VT/PT/MT/RX via partenaires) selon exigences du client.\n          </p>\n          \n\n          \n          \n            \n              \n                <h4>\n                  <a>\n                    1 - Gérez-vous les épreuves et PV ?\n                  </a>\n                </h4>\n              \n              \n                Oui, organisation des épreuves HP/LP, fourniture des procédures et PV d’essais, mise à jour des isos.\n              \n            \n            \n              \n                <h4>\n                  <a>\n                    2 - Quelles matières et diamètres ?\n                  </a>\n                </h4>\n              \n              \n                Acier carbone, inox 304/316, galvanisé ; DN de petits à gros diamètres. Assemblages soudés, brides, victaulic.\n              \n            \n            \n              \n                <h4>\n                  <a>\n                    3 - Travaillez-vous en arrêt d’unité ?\n                  </a>\n                </h4>\n              \n              \n                Oui, équipes dédiées, consignations et planification fine pour minimiser les temps d’arrêt.\n              \n            \n          \n\n          \n          <p>Notre méthode en 3 étapes :</p>\n          \n            \n              <strong>1</strong>\n              \n                <h4>Études</h4>\n                <p>Isos, listes matériel, supports, planning.</p>\n              \n            \n            \n              <strong>2</strong>\n              \n                <h4>Préfabrication</h4>\n                <p>Découpe, soudage, repérage, protection.</p>\n              \n            \n            \n              <strong>3</strong>\n              \n                <h4>Montage &amp; essais</h4>\n                <p>Pose, épreuves, CND, remise en service.</p>\n              \n            \n          \n        ",
+        "image": "@img/slider/quisommesnous.png",
+        "gallery": [],
+        "featured": true,
+        "seoTitle": "",
+        "seoDescription": ""
+      },
+      "position": 1
+    },
+    {
+      "type": "service",
+      "slug": "maintenance",
+      "title": "maintenance",
+      "data": {
+        "icon": "@img/slider/svgicon/gear-maintenance-service-svgrepo-com.svg",
+        "summary": "",
+        "tagline": "",
+        "body": "\n          <h2>Préventif, curatif &amp; arrêts planifiés</h2>\n          <p>\n            Contrats de maintenance, interventions mécano-soudées, tuyauteries, structures, et coordination multi-métiers. Mise en conformité, fiabilisation et <strong>amélioration continue</strong>.\n          </p>\n          <p>\n            Tableaux de bord, GMAO, plans de graissage, pièces critiques, consignations et sécurité renforcée. Traçabilité complète des interventions et rapports détaillés.\n          </p>\n          \n\n          \n          \n            \n              \n                <h4>\n                  <a>\n                    1 - Interventions H24 et astreintes ?\n                  </a>\n                </h4>\n              \n              \n                Oui, selon contrat : astreintes et délais d’intervention définis avec le client.\n              \n            \n            \n              \n                <h4>\n                  <a>\n                    2 - Fourniture des rapports et KPIs ?\n                  </a>\n                </h4>\n              \n              \n                Oui : rapports, photos, check-lists, recommandations, indicateurs et plan d’actions.\n              \n            \n            \n              \n                <h4>\n                  <a>\n                    3 - Arrêts techniques multi-métiers ?\n                  </a>\n                </h4>\n              \n              \n                Oui, planification, coordination des corps d’État et supervision sécurité.\n              \n            \n          \n\n          \n          <p>Notre démarche :</p>\n          \n            \n              <strong>1</strong>\n              \n                <h4>Diagnostic</h4>\n                <p>Analyse de criticité, plan de maintenance et planning.</p>\n              \n            \n            \n              <strong>2</strong>\n              \n                <h4>Exécution</h4>\n                <p>Préventif/curatif, consignations, contrôles qualité.</p>\n              \n            \n            \n              <strong>3</strong>\n              \n                <h4>Capitalisation</h4>\n                <p>Rapports, KPIs et amélioration continue.</p>\n              \n            \n          \n        ",
+        "image": "@img/demos/construction/generic/generic-3.jpg",
+        "gallery": [],
+        "featured": true,
+        "seoTitle": "",
+        "seoDescription": ""
+      },
+      "position": 2
+    },
+    {
+      "type": "service",
+      "slug": "genie-civil",
+      "title": "genie-civil",
+      "data": {
+        "icon": "@img/slider/svgicon/constructions-tower-svgrepo-com.svg",
+        "summary": "",
+        "tagline": "",
+        "body": "\n          <h2>Ouvrages &amp; aménagements</h2>\n          <p>\n            Massifs et longrines, <strong>dalles industrielles</strong>, socles machines, murs de soutènement, locaux techniques, VRD légers, seuils et rampes. Études, ferraillage, coffrage, coulage et cure.\n          </p>\n          <p>\n            Interfaces fluides/électricité/structure pour une mise en service rapide. Contrôles qualité et remise d’un <strong>DOE</strong> complet en fin de travaux.\n          </p>\n          \n\n          \n          \n            \n              \n                <h4>\n                  <a>\n                    1 - Études d’exécution incluses ?\n                  </a>\n                </h4>\n              \n              \n                Oui : plans, notes de calcul, méthodes et phasage. Coordination BET si requis.\n              \n            \n            \n              \n                <h4>\n                  <a>\n                    2 - Intervention en site industriel occupé ?\n                  </a>\n                </h4>\n              \n              \n                Oui, maîtrise HSE, permis, plan de prévention, accès restreints et phasage adapté.\n              \n            \n            \n              \n                <h4>\n                  <a>\n                    3 - Finitions et étanchéité possibles ?\n                  </a>\n                </h4>\n              \n              \n                Oui, systèmes adaptés à l’usage : résines, peintures, étanchéité, protections.\n              \n            \n          \n\n          \n          <p>De l’étude à la réception :</p>\n          \n            \n              <strong>1</strong>\n              \n                <h4>Préparation</h4>\n                <p>Études, repérage réseaux, implantation, méthodes.</p>\n              \n            \n            \n              <strong>2</strong>\n              \n                <h4>Exécution</h4>\n                <p>Terrassements, coffrages, ferraillage, coulage et cure.</p>\n              \n            \n            \n              <strong>3</strong>\n              \n                <h4>Réception</h4>\n                <p>Contrôles, finitions, remise des DOE.</p>\n              \n            \n          \n        ",
+        "image": "@img/demos/construction/generic/generic-6-medium.jpg",
+        "gallery": [],
+        "featured": true,
+        "seoTitle": "",
+        "seoDescription": ""
+      },
+      "position": 3
+    },
+    {
+      "type": "service",
+      "slug": "mecanique",
+      "title": "mecanique",
+      "data": {
+        "icon": "@img/slider/svgicon/car-repair-svgrepo-com.svg",
+        "summary": "",
+        "tagline": "",
+        "body": "\n          <h2>Nos services de mécanique automobile</h2>\n          <p>\n            GMC vous propose une gamme complète de services de <strong>maintenance automobile</strong> avec des équipements de pointe pour garantir la fiabilité, la sécurité et les performances optimales de votre véhicule.\n          </p>\n          <p>\n            Diagnostic électronique, parallélisme 3D, nettoyage moteur, climatisation, réparation d'injecteurs... Notre équipe qualifiée intervient sur tous types de véhicules.\n          </p>\n\n          \n          \n            <h3>\n              <i></i>Parallélisme / Géométrie auto 3D\n            </h3>\n            <p>\n              Un appareil de parallélisme permet de régler la géométrie des roues de votre véhicule avec précision. Ce service offre plusieurs avantages :\n            </p>\n            <ul>\n              <li><i></i> <strong>Sécurité routière améliorée</strong> : meilleure tenue de route et stabilité accrue, notamment dans les virages ou sur routes dégradées</li>\n              <li><i></i> <strong>Économies</strong> : réduction de l'usure prématurée des pneus</li>\n              <li><i></i> <strong>Confort de conduite</strong> : réduction des vibrations et des efforts au volant</li>\n            </ul>\n          \n\n          \n          \n            <h3>\n              <i></i>Diagnostic automobile\n            </h3>\n            <p>\n              Le diagnostic automobile est un processus qui permet d'identifier les problèmes mécaniques et électroniques d'un véhicule en utilisant des outils et des techniques spécifiques. Il est essentiel pour maintenir la fiabilité, la sécurité et les performances optimales de votre voiture.\n            </p>\n          \n\n          \n          \n            <h3>\n              <i></i>Nettoyage catalyseur et filtre à particules (FAP)\n            </h3>\n            <p>\n              Le nettoyage des filtres à particules (FAP) et des catalyseurs est une opération spécifique qui vise à éliminer les dépôts de suie et de cendres. Cette intervention permet de :\n            </p>\n            <ul>\n              <li><i></i> Restaurer les performances du moteur</li>\n              <li><i></i> Réduire les émissions polluantes</li>\n              <li><i></i> Prolonger la durée de vie de ces composants essentiels</li>\n            </ul>\n          \n\n          \n          \n            <h3>\n              <i></i>Machine de nettoyage au carbone HHO\n            </h3>\n            <p>\n              La machine de nettoyage au carbone HHO utilise l'électrolyse de l'eau pour produire un mélange d'hydrogène et d'oxygène (gaz HHO), qui est ensuite introduit dans le moteur pour éliminer les dépôts de carbone.\n            </p>\n            <p>\n              Cette méthode écologique (sans produits chimiques) permet d'améliorer les performances du moteur, de réduire la consommation de carburant et les émissions, et de prolonger la durée de vie du moteur.\n            </p>\n          \n\n          \n          \n            <h3>\n              <i></i>Pompe à Vide Climatisation\n            </h3>\n            <p>\n              La pompe à vide en climatisation automobile a pour rôle principal d'extraire l'air et l'humidité du circuit de climatisation. Cette opération, appelée \"tirage au vide\", est essentielle pour :\n            </p>\n            <ul>\n              <li><i></i> Assurer le bon fonctionnement du système</li>\n              <li><i></i> Éviter la corrosion interne</li>\n              <li><i></i> Prévenir la surconsommation de carburant</li>\n              <li><i></i> Maintenir l'efficacité de la climatisation</li>\n            </ul>\n          \n\n          \n          \n            <h3>\n              <i></i>Banc d'essai - Réparation pompes d'injection et injecteurs\n            </h3>\n            <p>\n              Le banc d'essai pour pompes d'injection et injecteurs est un équipement essentiel pour le diagnostic et la réparation de systèmes d'injection diesel. Il permet de tester et de calibrer ces composants afin de garantir des performances optimales du moteur et d'éviter des dommages potentiels.\n            </p>\n            <p>\n              La réparation implique un diagnostic précis, le <strong>nettoyage à ultrason</strong>, le remplacement de pièces défectueuses et des tests sur banc d'essai.\n            </p>\n          \n\n          \n          <h3>Questions fréquentes</h3>\n          \n            \n              \n                <h4>\n                  <a>\n                    1 - Quand faut-il faire un parallélisme ?\n                  </a>\n                </h4>\n              \n              \n                Après un choc (trottoir, nid de poule), lors du changement de pneus, si vous constatez une usure anormale des pneumatiques ou un volant décentré. Un contrôle annuel est également recommandé.\n              \n            \n            \n              \n                <h4>\n                  <a>\n                    2 - À quelle fréquence nettoyer le FAP ?\n                  </a>\n                </h4>\n              \n              \n                Le nettoyage du FAP est recommandé tous les 100 000 à 150 000 km, ou dès l'apparition du voyant moteur lié au système antipollution. Un usage principalement urbain peut nécessiter un entretien plus fréquent.\n              \n            \n            \n              \n                <h4>\n                  <a>\n                    3 - Quels sont les avantages du décalaminage HHO ?\n                  </a>\n                </h4>\n              \n              \n                Le décalaminage HHO est une méthode écologique sans produits chimiques. Il restaure la puissance du moteur, réduit la consommation de carburant (jusqu'à 15%), diminue les émissions polluantes et prolonge la durée de vie du moteur.\n              \n            \n          \n\n          \n          <p>Notre processus d'intervention :</p>\n          \n            \n              <strong>1</strong>\n              \n                <h4>Diagnostic</h4>\n                <p>Analyse complète du véhicule avec nos outils de diagnostic électronique pour identifier les problèmes.</p>\n              \n            \n            \n              <strong>2</strong>\n              \n                <h4>Intervention</h4>\n                <p>Réparation, nettoyage ou réglage selon les besoins identifiés, avec des équipements professionnels.</p>\n              \n            \n            \n              <strong>3</strong>\n              \n                <h4>Contrôle final</h4>\n                <p>Tests et vérifications pour garantir le bon fonctionnement et la satisfaction client.</p>\n              \n            \n          \n        ",
+        "image": null,
+        "gallery": [],
+        "featured": true,
+        "seoTitle": "",
+        "seoDescription": ""
+      },
+      "position": 4
+    },
+    {
+      "type": "service",
+      "slug": "location-hebergement",
+      "title": "location-hebergement",
+      "data": {
+        "icon": "@img/slider/svgicon/house-rent-svgrepo-com.svg",
+        "summary": "",
+        "tagline": "",
+        "body": "",
+        "image": null,
+        "gallery": [],
+        "featured": true,
+        "seoTitle": "",
+        "seoDescription": ""
+      },
+      "position": 5
+    },
+    {
+      "type": "training",
+      "slug": "soudure",
+      "title": "Soudure industrielle",
+      "data": {
+        "shortTitle": "Soudure industrielle",
+        "icon": "@img/slider/svgicon/welding-mask-svgrepo-com.svg",
+        "summary": "MMA, MIG/MAG, TIG – sécurité & lecture de plan.",
+        "body": "<p>Procédés courants (MMA, MIG/MAG, TIG), préparation des assemblages, réglages, positions et contrôles visuels.</p>",
+        "objectives": "maîtriser les réglages et la qualité d'un cordon",
+        "audience": "soudeurs/ajusteurs – niveau débutant à confirmé",
+        "duration": "6 mois (débutant)",
+        "note": "Préparation à la certification en soudure industrielle (Nous consulter)",
+        "image": null,
+        "gallery": [],
+        "document": null,
+        "featured": true,
+        "seoTitle": "",
+        "seoDescription": ""
+      },
+      "position": 0
+    },
+    {
+      "type": "training",
+      "slug": "tuyauterie",
+      "title": "Tuyauterie industrielle",
+      "data": {
+        "shortTitle": "Tuyauterie industrielle",
+        "icon": "@img/slider/svgicon/industrial-pipe-svgrepo-com.svg",
+        "summary": "Montage, contrôles NDT, QA/QC – ateliers & sites.",
+        "body": "<p>Lecture de plans isométriques, traçage, préfabrication, montage et contrôle d&#x27;étanchéité des lignes.</p>",
+        "objectives": "réaliser une ligne selon normes HSE/qualité",
+        "audience": "tuyauteurs, soudeurs, chefs d'équipe",
+        "duration": "8 à 12 semaines",
+        "note": "",
+        "image": null,
+        "gallery": [],
+        "document": null,
+        "featured": true,
+        "seoTitle": "",
+        "seoDescription": ""
+      },
+      "position": 1
+    },
+    {
+      "type": "training",
+      "slug": "echafaudage",
+      "title": "Échafaudage",
+      "data": {
+        "shortTitle": "Échafaudage",
+        "icon": "@img/slider/svgicon/ladder-scaffold-stairs-svgrepo-com.svg",
+        "summary": "Montage sécurisé, EPC/EPI, procédures et conformité.",
+        "body": "<p>Montage, utilisation et vérification des échafaudages fixes et roulants, avec focus sécurité et conformité.</p>",
+        "objectives": "travailler en hauteur en sécurité",
+        "audience": "monteurs, utilisateurs, encadrants",
+        "duration": "6 à 8 semaines",
+        "note": "Préparation à la certification en échafaudage (Nous consulter)",
+        "image": null,
+        "gallery": [],
+        "document": null,
+        "featured": true,
+        "seoTitle": "",
+        "seoDescription": ""
+      },
+      "position": 2
+    },
+    {
+      "type": "training",
+      "slug": "calorifugeage",
+      "title": "Calorifugeage (isolation thermique industrielle)",
+      "data": {
+        "shortTitle": "Calorifugeage",
+        "icon": "@img/slider/svgicon/gear-maintenance-service-svgrepo-com.svg",
+        "summary": "",
+        "body": "<p>Matériaux, techniques de pose, traitement des ponts thermiques, protections et finitions.</p>",
+        "objectives": "optimiser la performance énergétique des installations",
+        "audience": "calorifugeurs, mainteneurs",
+        "duration": "8 semaines",
+        "note": "",
+        "image": null,
+        "gallery": [],
+        "document": null,
+        "featured": false,
+        "seoTitle": "",
+        "seoDescription": ""
+      },
+      "position": 3
+    },
+    {
+      "type": "training",
+      "slug": "froid",
+      "title": "Froid industriel",
+      "data": {
+        "shortTitle": "Froid industriel",
+        "icon": "@img/slider/svgicon/gear-maintenance-service-svgrepo-com.svg",
+        "summary": "",
+        "body": "<p>Principes thermodynamiques, composants, mise en service et maintenance des installations frigorifiques.</p>",
+        "objectives": "diagnostiquer et maintenir un système de froid",
+        "audience": "techniciens CVC/industrie",
+        "duration": "6 semaines à 3 mois",
+        "note": "",
+        "image": null,
+        "gallery": [],
+        "document": null,
+        "featured": false,
+        "seoTitle": "",
+        "seoDescription": ""
+      },
+      "position": 4
+    },
+    {
+      "type": "training",
+      "slug": "injection-diesel",
+      "title": "Systèmes d'injection diesel et leurs évolutions",
+      "data": {
+        "shortTitle": "Injection diesel",
+        "icon": "@img/slider/svgicon/gear-maintenance-service-svgrepo-com.svg",
+        "summary": "",
+        "body": "<p>Common rail, capteurs/actionneurs, stratégies de commande, diagnostic pannes et mesures.</p>",
+        "objectives": "comprendre/diagnostiquer les systèmes modernes",
+        "audience": "mécaniciens auto/PL, techniciens maintenance",
+        "duration": "6 à 12 semaines",
+        "note": "",
+        "image": null,
+        "gallery": [],
+        "document": null,
+        "featured": false,
+        "seoTitle": "",
+        "seoDescription": ""
+      },
+      "position": 5
+    },
+    {
+      "type": "training",
+      "slug": "hydromecanique",
+      "title": "Hydromécanique",
+      "data": {
+        "shortTitle": "Hydromécanique",
+        "icon": "@img/slider/svgicon/gear-maintenance-service-svgrepo-com.svg",
+        "summary": "",
+        "body": "<p>Hydraulique appliquée, pompes, vérins, distributeurs, lecture de schémas et dépannage.</p>",
+        "objectives": "exploiter et maintenir un circuit hydraulique",
+        "audience": "mainteneurs, techniciens de procédés",
+        "duration": "3 à 6 mois",
+        "note": "",
+        "image": null,
+        "gallery": [],
+        "document": null,
+        "featured": false,
+        "seoTitle": "",
+        "seoDescription": ""
+      },
+      "position": 6
+    },
+    {
+      "type": "training",
+      "slug": "electricite-auto",
+      "title": "Électricité automobile (diagnostic)",
+      "data": {
+        "shortTitle": "Électricité automobile",
+        "icon": "@img/slider/svgicon/gear-maintenance-service-svgrepo-com.svg",
+        "summary": "",
+        "body": "<p>Réseaux multiplexés, schémas constructeurs, mesure/contrôle, méthodologie de diagnostic.</p>",
+        "objectives": "diagnostiquer des pannes électriques/électroniques",
+        "audience": "électriciens auto, techniciens atelier",
+        "duration": "6 semaines à 6 mois",
+        "note": "",
+        "image": null,
+        "gallery": [],
+        "document": null,
+        "featured": false,
+        "seoTitle": "",
+        "seoDescription": ""
+      },
+      "position": 7
+    },
+    {
+      "type": "training",
+      "slug": "rubber-lining",
+      "title": "Rubber Lining : Revêtements en caoutchouc",
+      "data": {
+        "shortTitle": "Rubber Lining",
+        "icon": "@img/slider/svgicon/pipes-svgrepo-com.svg",
+        "summary": "Revêtements en caoutchouc – protection anticorrosion.",
+        "body": "<p>Le revêtement en caoutchouc est utilisé dans de nombreux secteurs industriels où les canalisations doivent résister à des températures extrêmes, à la corrosion, à l&#x27;abrasion ou aux agressions chimiques.</p>",
+        "objectives": "Les revêtements en caoutchouc protègent les métaux et autres supports contre divers milieux corrosifs",
+        "audience": "mines / industrie",
+        "duration": "60 jours",
+        "note": "Préparation à la certification Rubber Lining (Nous consulter)",
+        "image": null,
+        "gallery": [],
+        "document": null,
+        "featured": true,
+        "seoTitle": "",
+        "seoDescription": ""
+      },
+      "position": 8
+    },
+    {
+      "type": "training",
+      "slug": "hse",
+      "title": "H.S.E : Hygiène, Sécurité et Environnement au travail",
+      "data": {
+        "shortTitle": "HSE",
+        "icon": "@img/slider/svgicon/safety-helmet-svgrepo-com.svg",
+        "summary": "Hygiène, Sécurité et Environnement au travail.",
+        "body": "<p>La formation en Hygiène, Sécurité et Environnement (HSE) a pour objectif de développer les compétences nécessaires pour identifier, évaluer et prévenir les risques professionnels afin d&#x27;assurer la sécurité et le bien-être de l&#x27;employé dans l&#x27;environnement professionnel.</p>",
+        "objectives": "identifier, évaluer et prévenir les risques professionnels",
+        "audience": "Tout public",
+        "duration": "20 jours",
+        "note": "Préparation à la certification en HSE (Nous consulter)",
+        "image": null,
+        "gallery": [],
+        "document": null,
+        "featured": true,
+        "seoTitle": "",
+        "seoDescription": ""
+      },
+      "position": 9
+    },
+    {
+      "type": "training",
+      "slug": "electricite-industrielle",
+      "title": "Électricité industrielle",
+      "data": {
+        "shortTitle": "Électricité industrielle",
+        "icon": "@img/slider/svgicon/electric-electricity-svgrepo-com.svg",
+        "summary": "Câblages, maintenance systèmes électroniques.",
+        "body": "<p>Formation complète en électricité industrielle couvrant les fondamentaux jusqu&#x27;à la maintenance des systèmes électroniques.</p>",
+        "objectives": "Introduction à l'électricité industrielle et sécurité électrique\nMontages et câblages électriques\nMaintenance et conduite de systèmes électroniques",
+        "audience": "Technicien électricien",
+        "duration": "11 semaines",
+        "note": "",
+        "image": null,
+        "gallery": [],
+        "document": null,
+        "featured": true,
+        "seoTitle": "",
+        "seoDescription": ""
+      },
+      "position": 10
+    },
+    {
+      "type": "about",
+      "slug": "main",
+      "title": "Qui sommes-nous",
+      "data": {
+        "image": "@img/slider/quisommesnous.png",
+        "body": "\n              \n                <h2>Qui sommes-nous</h2>\n                \n                <p>GMC (Général Mauritanien de Constructions) conçoit, fabrique et installe des ouvrages métalliques et de génie civil pour les secteurs minier, gazier et industriel. Nous intervenons en atelier et sur site : tuyauterie process, plateformes et passerelles, sablage/peinture, maintenance et services.</p>\n                <p>Basés à Nouakchott, nous travaillons avec un réseau de partenaires internationaux et mettons la sécurité, la qualité et le respect des délais au cœur de nos engagements.</p>\n\n                \n                  \n                    \n                      <strong>15+</strong>\n                      Années d’expérience\n                    \n                  \n                  \n                    \n                      <strong>100+</strong>\n                      Projets livrés\n                    \n                  \n                  \n                    \n                      <strong>30+</strong>\n                      Clients &amp; partenaires\n                    \n                  \n                \n              \n            ",
+        "gallery": []
+      },
+      "position": 0
+    },
+    {
+      "type": "about_block",
+      "slug": "history",
+      "title": "Historique",
+      "data": {
+        "body": "\n              \n                <h2>Historique</h2>\n                \n                  \n                    \n                      <strong>2009</strong>\n                      <strong>Création de GMC</strong>\n                      <p>Mise en place des premiers ateliers et équipes chantier en Mauritanie.</p>\n                    \n                    \n                      <strong>2014</strong>\n                      <strong>Déploiement industriel</strong>\n                      <p>Renforcement des activités tuyauterie &amp; anticorrosion sur sites miniers.</p>\n                    \n                    \n                      <strong>2020</strong>\n                      <strong>Diversification</strong>\n                      <p>Mécanique automobile, showroom fournitures et offre de formation professionnelle.</p>\n                    \n                  \n                \n              \n            ",
+        "image": null
+      },
+      "position": 0
+    },
+    {
+      "type": "about_block",
+      "slug": "mission-vision",
+      "title": "Mission et vision",
+      "data": {
+        "body": "\n              \n                <h2>Mission &amp; Vision</h2>\n                \n                  <ul>\n                    <li><a>Manifesto</a></li>\n                    <li><a>Vision</a></li>\n                    <li><a>Mission</a></li>\n                  </ul>\n                  \n                    \n                      <p>Construire des solutions sûres et durables pour l’industrie mauritanienne, en valorisant les compétences locales et une culture QHSE exigeante.</p>\n                    \n                    \n                      <p>Devenir un partenaire de référence en Afrique de l’Ouest pour la construction métallique, la tuyauterie process et la maintenance à haute exigence.</p>\n                    \n                    \n                      <p>Le perfectionnement des jeunes sortant des centres de formations professionnelles pour les préparer à la certification \n                        aux métiers en collaboration avec des organismes de certifications internationaux reconnus.</p>\n                    \n                  \n                \n              \n            ",
+        "image": null
+      },
+      "position": 1
+    },
+    {
+      "type": "partner",
+      "slug": "partenaire-1",
+      "title": "delegation",
+      "data": {
+        "image": "@img/slider/partenaire/delegation.jpg",
+        "link": ""
+      },
+      "position": 0
+    },
+    {
+      "type": "partner",
+      "slug": "partenaire-2",
+      "title": "italia",
+      "data": {
+        "image": "@img/slider/partenaire/italia.png",
+        "link": ""
+      },
+      "position": 1
+    },
+    {
+      "type": "partner",
+      "slug": "partenaire-3",
+      "title": "image2",
+      "data": {
+        "image": "@img/slider/partenaire/image2.jpeg",
+        "link": ""
+      },
+      "position": 2
+    },
+    {
+      "type": "partner",
+      "slug": "partenaire-4",
+      "title": "induproj",
+      "data": {
+        "image": "@img/slider/partenaire/induproj.png",
+        "link": ""
+      },
+      "position": 3
+    },
+    {
+      "type": "partner",
+      "slug": "partenaire-5",
+      "title": "kinross",
+      "data": {
+        "image": "@img/slider/partenaire/kinross.png",
+        "link": ""
+      },
+      "position": 4
+    },
+    {
+      "type": "partner",
+      "slug": "partenaire-6",
+      "title": "rmc",
+      "data": {
+        "image": "@img/slider/partenaire/rmc.jpg",
+        "link": ""
+      },
+      "position": 5
+    },
+    {
+      "type": "partner",
+      "slug": "partenaire-7",
+      "title": "snim",
+      "data": {
+        "image": "@img/slider/partenaire/snim.jpg",
+        "link": ""
+      },
+      "position": 6
+    },
+    {
+      "type": "partner",
+      "slug": "partenaire-8",
+      "title": "tcn",
+      "data": {
+        "image": "@img/slider/partenaire/tcn.jpg",
+        "link": ""
+      },
+      "position": 7
+    },
+    {
+      "type": "partner",
+      "slug": "partenaire-9",
+      "title": "usa",
+      "data": {
+        "image": "@img/slider/partenaire/usa.jpg",
+        "link": ""
+      },
+      "position": 8
+    },
+    {
+      "type": "partner",
+      "slug": "partenaire-10",
+      "title": "mic",
+      "data": {
+        "image": "@img/slider/partenaire/mic.jpg",
+        "link": ""
+      },
+      "position": 9
+    },
+    {
+      "type": "partner",
+      "slug": "partenaire-11",
+      "title": "exxon",
+      "data": {
+        "image": "@img/slider/partenaire/exxon.png",
+        "link": ""
+      },
+      "position": 10
+    },
+    {
+      "type": "partner",
+      "slug": "partenaire-12",
+      "title": "waterford",
+      "data": {
+        "image": "@img/slider/partenaire/waterford.png",
+        "link": ""
+      },
+      "position": 11
+    },
+    {
+      "type": "project",
+      "slug": "realisation-1",
+      "title": "Charpente & passerelle",
+      "data": {
+        "category": "construction metallique",
+        "location": "LYON",
+        "image": "@img/demos/construction/generic/generic-1-medium.jpg",
+        "body": "",
+        "gallery": []
+      },
+      "position": 0
+    },
+    {
+      "type": "project",
+      "slug": "realisation-2",
+      "title": "Skids & réseaux utilités",
+      "data": {
+        "category": "tuyauterie",
+        "location": "ROUEN",
+        "image": "@img/demos/construction/generic/generic-2-medium.jpg",
+        "body": "",
+        "gallery": []
+      },
+      "position": 1
+    },
+    {
+      "type": "project",
+      "slug": "realisation-3",
+      "title": "Arrêt technique multi-métiers",
+      "data": {
+        "category": "maintenance",
+        "location": "LE HAVRE",
+        "image": "@img/demos/construction/generic/generic-3-medium.jpg",
+        "body": "",
+        "gallery": []
+      },
+      "position": 2
+    },
+    {
+      "type": "project",
+      "slug": "realisation-4",
+      "title": "Massifs & locaux techniques",
+      "data": {
+        "category": "genic civil genie civil",
+        "location": "TOULOUSE",
+        "image": "@img/demos/construction/generic/generic-6-medium.jpg",
+        "body": "",
+        "gallery": []
+      },
+      "position": 3
+    },
+    {
+      "type": "project",
+      "slug": "realisation-5",
+      "title": "Extension de mezzanine",
+      "data": {
+        "category": "construction metallique",
+        "location": "NANTES",
+        "image": "@img/demos/construction/generic/generic-10-medium.jpg",
+        "body": "",
+        "gallery": []
+      },
+      "position": 4
+    },
+    {
+      "type": "project",
+      "slug": "realisation-6",
+      "title": "Réseaux incendie & air",
+      "data": {
+        "category": "tuyauterie",
+        "location": "BORDEAUX",
+        "image": "@img/demos/construction/generic/generic-9-medium.jpg",
+        "body": "",
+        "gallery": []
+      },
+      "position": 5
+    },
+    {
+      "type": "contact",
+      "slug": "main",
+      "title": "Contactez GMC",
+      "data": {
+        "address": "ZAA NC58 N°144-145 Dar Naïm, Ancien aéroport de Nouakchott, Mauritanie",
+        "phone": "(+222) 41 41 40 93",
+        "phone2": "",
+        "email": "contact@gmcmauritanie.com",
+        "whatsapp": "",
+        "hours": "",
+        "mapQuery": "18.1054722,-15.9387222",
+        "formTitle": "Envoyez-nous un message",
+        "formIntro": "Dites-nous en plus sur votre besoin, nous revenons vers vous rapidement."
+      },
+      "position": 0
+    },
+    {
+      "type": "settings",
+      "slug": "main",
+      "title": "GMC Mauritanie",
+      "data": {
+        "logo": "@img/demos/construction/logogmc.png",
+        "favicon": "@img/favicon.ico",
+        "footer": "GMC Mauritanie — Tous droits réservés.",
+        "facebook": "",
+        "instagram": "",
+        "linkedin": "",
+        "x": ""
+      },
+      "position": 0
+    },
+    {
+      "type": "menu",
+      "slug": "accueil",
+      "title": "Accueil",
+      "data": {
+        "link": "/",
+        "footer": true
+      },
+      "position": 0
+    },
+    {
+      "type": "page",
+      "slug": "accueil",
+      "title": "Accueil",
+      "data": {
+        "intro": "",
+        "image": null,
+        "seoTitle": "GMC | Accueil",
+        "seoDescription": ""
+      },
+      "position": 0
+    },
+    {
+      "type": "menu",
+      "slug": "a-propos",
+      "title": "À propos",
+      "data": {
+        "link": "/a-propos",
+        "footer": true
+      },
+      "position": 1
+    },
+    {
+      "type": "page",
+      "slug": "a-propos",
+      "title": "À propos",
+      "data": {
+        "intro": "",
+        "image": null,
+        "seoTitle": "GMC | À propos",
+        "seoDescription": ""
+      },
+      "position": 0
+    },
+    {
+      "type": "menu",
+      "slug": "services",
+      "title": "Services",
+      "data": {
+        "link": "/services",
+        "footer": true
+      },
+      "position": 2
+    },
+    {
+      "type": "page",
+      "slug": "services",
+      "title": "Services",
+      "data": {
+        "intro": "",
+        "image": null,
+        "seoTitle": "GMC | Services",
+        "seoDescription": ""
+      },
+      "position": 0
+    },
+    {
+      "type": "menu",
+      "slug": "formation",
+      "title": "Formations",
+      "data": {
+        "link": "/formation",
+        "footer": true
+      },
+      "position": 3
+    },
+    {
+      "type": "page",
+      "slug": "formation",
+      "title": "Formations",
+      "data": {
+        "intro": "",
+        "image": null,
+        "seoTitle": "GMC | Formations",
+        "seoDescription": ""
+      },
+      "position": 0
+    },
+    {
+      "type": "menu",
+      "slug": "realisations",
+      "title": "Réalisations",
+      "data": {
+        "link": "/realisations",
+        "footer": true
+      },
+      "position": 4
+    },
+    {
+      "type": "page",
+      "slug": "realisations",
+      "title": "Réalisations",
+      "data": {
+        "intro": "",
+        "image": null,
+        "seoTitle": "GMC | Réalisations",
+        "seoDescription": ""
+      },
+      "position": 0
+    },
+    {
+      "type": "menu",
+      "slug": "contact",
+      "title": "Contact",
+      "data": {
+        "link": "/contact",
+        "footer": true
+      },
+      "position": 5
+    },
+    {
+      "type": "page",
+      "slug": "contact",
+      "title": "Contact",
+      "data": {
+        "intro": "",
+        "image": null,
+        "seoTitle": "GMC | Contact",
+        "seoDescription": ""
+      },
+      "position": 0
+    }
+  ],
+  "media": [
+    "img/apple-touch-icon.png",
+    "img/demos/construction/generic/generic-1-medium.jpg",
+    "img/demos/construction/generic/generic-10-medium.jpg",
+    "img/demos/construction/generic/generic-2-medium.jpg",
+    "img/demos/construction/generic/generic-3-medium.jpg",
+    "img/demos/construction/generic/generic-3.jpg",
+    "img/demos/construction/generic/generic-6-medium.jpg",
+    "img/demos/construction/generic/generic-9-medium.jpg",
+    "img/demos/construction/icons/arrow-right.svg",
+    "img/demos/construction/icons/email.svg",
+    "img/demos/construction/icons/faucet.svg",
+    "img/demos/construction/icons/location.svg",
+    "img/demos/construction/icons/paint-brush.svg",
+    "img/demos/construction/icons/phone.svg",
+    "img/demos/construction/icons/pushcart.svg",
+    "img/demos/construction/icons/winch.svg",
+    "img/demos/construction/logo-dark.png",
+    "img/demos/construction/logogmc.png",
+    "img/demos/construction/slides/slide-1-engineer.png",
+    "img/favicon.ico",
+    "img/logos/logo-10.png",
+    "img/logos/logo-11.png",
+    "img/logos/logo-12.png",
+    "img/logos/logo-13.png",
+    "img/logos/logo-8.png",
+    "img/logos/logo-9.png",
+    "img/slider/location/loc1.jpeg",
+    "img/slider/location/loc2.jpeg",
+    "img/slider/location/loc3.jpeg",
+    "img/slider/location/loc4.jpeg",
+    "img/slider/location/loc5.jpeg",
+    "img/slider/location/loc6.jpeg",
+    "img/slider/location/loc7.jpeg",
+    "img/slider/partenaire/delegation.jpg",
+    "img/slider/partenaire/exxon.png",
+    "img/slider/partenaire/image2.jpeg",
+    "img/slider/partenaire/induproj.png",
+    "img/slider/partenaire/italia.png",
+    "img/slider/partenaire/kinross.png",
+    "img/slider/partenaire/mic.jpg",
+    "img/slider/partenaire/rmc.jpg",
+    "img/slider/partenaire/snim.jpg",
+    "img/slider/partenaire/tcn.jpg",
+    "img/slider/partenaire/usa.jpg",
+    "img/slider/partenaire/waterford.png",
+    "img/slider/quisommesnous.png",
+    "img/slider/slide1.jpeg",
+    "img/slider/slide2.jpeg",
+    "img/slider/svgicon/block-build-civil-svgrepo-com.svg",
+    "img/slider/svgicon/car-repair-svgrepo-com.svg",
+    "img/slider/svgicon/construction-ladder-svgrepo-com.svg",
+    "img/slider/svgicon/constructions-tower-svgrepo-com.svg",
+    "img/slider/svgicon/electric-electricity-svgrepo-com.svg",
+    "img/slider/svgicon/gear-maintenance-service-svgrepo-com.svg",
+    "img/slider/svgicon/house-rent-svgrepo-com.svg",
+    "img/slider/svgicon/industrial-pipe-svgrepo-com.svg",
+    "img/slider/svgicon/ladder-scaffold-stairs-svgrepo-com.svg",
+    "img/slider/svgicon/pipes-svgrepo-com.svg",
+    "img/slider/svgicon/safety-helmet-svgrepo-com.svg",
+    "img/slider/svgicon/welding-mask-svgrepo-com.svg"
+  ]
+}

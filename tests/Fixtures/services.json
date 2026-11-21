@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "construction-metallique",
+    "title": "Construction métallique",
+    "summary": "Hangars, plateformes, passerelles, réservoirs, charpentes.",
+    "tagline": "Fabrication & Installation",
+    "listTitle": "Fabrication & installation – Construction métallique",
+    "description": "Charpentes, passerelles, plateformes, garde-corps, réservoirs, silos. Études, préfabrication atelier, montage sur site et contrôles QA/QC."
+  },
+  {
+    "slug": "tuyauterie",
+    "title": "Tuyauterie industrielle",
+    "summary": "Fabrication, montage, essais pression – acier & inox, QA/QC.",
+    "tagline": "Atelier & Site",
+    "listTitle": "Tuyauterie industrielle",
+    "description": "Réseaux process acier/inox, isométriques, supportage, essais pression, traitement anticorrosion, calorifuge."
+  },
+  {
+    "slug": "maintenance",
+    "title": "Maintenance industrielle",
+    "summary": "Sablage, peinture, rubber lining, échafaudage.",
+    "tagline": "Préventive & Curative",
+    "listTitle": "Maintenance industrielle",
+    "description": "Arrêts programmés, interventions mécano-soudure, sablage/peinture, revamping d’installations, assistance 24/7."
+  },
+  {
+    "slug": "genie-civil",
+    "title": "Bâtiment – Génie civil",
+    "summary": "Gros œuvre, dalles industrielles, VRD, fondations.",
+    "tagline": "Construction & Rénovation",
+    "listTitle": "Bâtiment – Génie civil",
+    "description": "Gros œuvre et second œuvre, dalles industrielles, VRD, fondations et génie civil pour équipements."
+  },
+  {
+    "slug": "mecanique",
+    "title": "Mécanique automobile",
+    "summary": "Diagnostic, géométrie 3D, FAP/EGR, injecteurs diesel.",
+    "tagline": "Équipements modernes",
+    "listTitle": "Mécanique automobile",
+    "description": "Parallélisme, géometrie, sécurité routière ...."
+  },
+  {
+    "slug": "location-hebergement",
+    "title": "Location & Hébergement",
+    "summary": "Appartements et studios meublés, sécurisés à Nouakchott.",
+    "tagline": "Résidences équipées",
+    "listTitle": "Location & Hébergement",
+    "description": "GMC vous propose également des hébergements dans ses résidences situées à Nouakchott ."
+  }
+]

@@ -1,0 +1,13 @@
+{% extends 'admin/base.html.twig' %}
+{% block title %}Connexion · GMC{% endblock %}
+{% block body %}
+<section class="panel mx-auto" style="max-width:520px">
+<h1 class="h3 mb-3">Connexion</h1><p class="text-secondary">Accédez à la gestion du site GMC Mauritanie.</p>
+{% if error %}<div class="alert alert-danger" role="alert">Connexion impossible. Vérifiez vos identifiants et réessayez.</div>{% endif %}
+<form method="post" action="{{ path('admin_login') }}">
+<input type="hidden" name="_csrf_token" value="{{ csrf_token('admin_login') }}">
+<div class="mb-3"><label for="email" class="form-label">Adresse e-mail</label><input id="email" name="_username" type="email" class="form-control" value="{{ last_username }}" autocomplete="username" required autofocus></div>
+<div class="mb-4"><label for="password" class="form-label">Mot de passe</label><input id="password" name="_password" type="password" class="form-control" autocomplete="current-password" required></div>
+<button class="btn btn-primary w-100">Se connecter</button>
+</form></section>
+{% endblock %}
