@@ -14,7 +14,9 @@
 - Dernière suite : 23 tests réussis, 147 assertions.
 - Validation Twig et injection de dépendances réussies ; syntaxe JavaScript vérifiée.
 - Affichage public et chargement des images vérifiés dans le navigateur.
-- L’administration a été vérifiée par les tests automatisés ; la dernière session navigateur était déconnectée.
+- Formulaire du slider vérifié en session administrateur : les aperçus sont chargés, un déplacement du curseur ordinateur modifie son cadrage sans changer celui du mobile.
+- Sélection temporaire d’une image de 147 × 160 px : avertissement immédiat confirmé. Formulaire rechargé sans enregistrer les données de test.
+- Absence de débordement horizontal vérifiée à 390 px et 1440 px. La limite effective de 2 Mo et les dimensions des médias s’affichent dans le sélecteur.
 
 ## Reprise du travail
 
@@ -29,5 +31,5 @@
 - Configurer et vérifier le transport SMTP et les destinataires du formulaire de contact. Le transport local est désactivé.
 - Remplacer les anciens identifiants SMTP présents dans le script historique send-mail.php, exclu de Git.
 - Configurer les secrets de production, HTTPS, les permissions, les sauvegardes et GD/WebP (EXIF recommandé).
-- Vérifier visuellement les formulaires connectés et le cadrage sur plusieurs tailles d’écran avec les contenus définitifs.
-- Aucun déploiement ni envoi vers un dépôt distant effectué à cette étape.
+- Poursuivre la recette des autres rubriques et choisir les images définitives en haute résolution. Le formulaire du slider et ses cadrages ont été contrôlés sur mobile et ordinateur.
+- Branche refonte-symfony poussée vers origin (GitHub : Adjanouhoun/gmcmauritanie). Commit fonctionnel : 08468e9. Aucun déploiement effectué.
