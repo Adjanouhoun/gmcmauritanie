@@ -44,6 +44,15 @@ final class CmsAdminController extends AbstractController
             $data=is_array($post['data']??null)?$post['data']:[];$values['data']=[];
             foreach ($fields as $key=>[$label,$widget,$required]) {
                 $v=$data[$key]??'';
+                if ($widget==='category') {
+                    $category=is_string($v)&&ctype_digit($v)?$em->find(CmsEntry::class,(int)$v):null;
+                    if ($v!=='' && (!$category || $category->type!=='project_category')) $errors[]='Choisissez une activité valide.';
+                    $values['data'][$key]=$category?->getId();continue;
+                }
+                if ($widget==='year') {
+                    if ($v!=='' && (!is_string($v) || !preg_match('/^(19|20|21)[0-9]{2}$/',$v))) $errors[]='L’année doit être comprise entre 1900 et 2199.';
+                    $values['data'][$key]=is_string($v)?$v:'';continue;
+                }
                 if ($widget==='range') {
                     $number=$v===''?50:filter_var($v,FILTER_VALIDATE_INT);
                     if ($number===false || $number<0 || $number>100) $errors[]=$label.' : choisissez une valeur entre 0 et 100.';
@@ -86,6 +95,12 @@ final class CmsAdminController extends AbstractController
             if ($existing && $existing->getId()!==$id) $errors[]='Cette adresse est déjà utilisée.';
             if (!$errors) {
                 foreach (['title','slug','status','position','data'] as $key) $entry->$key=$values[$key];
+                // Only one published project is featured; drafts never displace the public selection.
+                if ($type==='project' && $entry->status==='published' && ($entry->data['featured']??false)) {
+                    foreach ($em->getRepository(CmsEntry::class)->findBy(['type'=>'project','status'=>'published']) as $other) {
+                        if ($other!==$entry && ($other->data['featured']??false)) $other->data['featured']=false;
+                    }
+                }
                 $em->persist($entry);
                 try { $em->flush(); }
                 catch (OptimisticLockException|UniqueConstraintViolationException) { return new Response('Le contenu ou son adresse a changé. Rechargez la page.',409); }
@@ -97,7 +112,7 @@ final class CmsAdminController extends AbstractController
             }
             if ($status===200) $status=422;
         }
-        return $this->render('admin/cms_edit.html.twig',['type'=>$type,'types'=>Schema::TYPES,'entry'=>$entry,'values'=>$values,'fields'=>$fields,'errors'=>$errors,'fixed'=>$fixed,'media'=>$em->getRepository(Media::class)->findBy([],['id'=>'DESC'])],new Response(status:$status));
+        return $this->render('admin/cms_edit.html.twig',['type'=>$type,'types'=>Schema::TYPES,'entry'=>$entry,'values'=>$values,'fields'=>$fields,'errors'=>$errors,'fixed'=>$fixed,'categories'=>$em->getRepository(CmsEntry::class)->findBy(['type'=>'project_category'],['position'=>'ASC','title'=>'ASC']),'media'=>$em->getRepository(Media::class)->findBy([],['id'=>'DESC'])],new Response(status:$status));
     }
     #[Route('/admin/apercu/{id}',name:'cms_preview',requirements:['id'=>'\d+'],methods:['GET'])]
     public function preview(int $id,EntityManagerInterface $em,Content $cms,CmsSiteController $site): Response
@@ -109,6 +124,7 @@ final class CmsAdminController extends AbstractController
             'service','training','project'=>$site->detail($entry->type,$entry->slug,$cms),
             'about','about_block'=>$site->page('a-propos',$cms),
             'contact'=>$site->page('contact',$cms),
+            'project_category'=>$site->page('realisations',$cms),
             'page'=>$site->page($entry->slug,$cms),
             default=>$site->page('accueil',$cms),
         };

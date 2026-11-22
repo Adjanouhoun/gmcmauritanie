@@ -154,4 +154,37 @@ final class AdminControllerTest extends WebTestCase
         self::assertSame(10,$items[0]['width']);self::assertSame(10,$items[0]['height']);
     }
 
+    public function testProjectCategoriesAndPortfolioDetails(): void
+    {
+        $command=new CommandTester(self::getContainer()->get(\App\Command\OrganizeProjectsCommand::class));$command->execute([]);
+        $em=self::getContainer()->get(EntityManagerInterface::class);$count=$em->getRepository(CmsEntry::class)->count(['type'=>'project_category']);
+        self::assertGreaterThan(0,$count);$command->execute([]);self::assertSame($count,$em->getRepository(CmsEntry::class)->count(['type'=>'project_category']));
+        $project=$em->getRepository(CmsEntry::class)->findOneBy(['type'=>'project']);$id=$project->getId();$url=$this->edit($project);$slug=$project->slug;
+        $category=$em->find(CmsEntry::class,$project->data['categoryId']);$categoryId=$category->getId();$categoryUrl=$this->edit($category);$originalLocation=$project->data['location'];
+        $this->login();$crawler=$this->client->request('GET',$url);$data=$crawler->selectButton('Enregistrer')->form()->getPhpValues();
+        $data['data']['year']='2026';$data['data']['summary']='Un projet de référence';$data['data']['work']='<p>Montage sur site</p>';$data['data']['results']='<p>Travaux réceptionnés</p>';$data['data']['client']='Client autorisé';$data['data']['featured']='1';$data['data']['focusX']='25';
+        $this->client->request('POST',$url,$data);self::assertResponseRedirects();
+        $this->client->request('GET','/realisations');self::assertSelectorTextContains('[data-project-feature]','Un projet de référence');self::assertSelectorExists('[data-project-filter="'.$categoryId.'"]');self::assertSelectorCount($count+1,'[data-project-filter]');
+        $this->client->request('GET','/realisations/'.$slug);self::assertResponseIsSuccessful();self::assertSelectorTextContains('h1',$project->title);self::assertSelectorTextContains('.project-story','Montage sur site');self::assertSelectorTextContains('.project-facts',$originalLocation);self::assertSelectorTextContains('.project-facts','2026');self::assertSelectorExists('.project-detail-cover img[style*="25%"]');
+        $crawler=$this->client->request('GET',$categoryUrl);$this->client->submit($crawler->selectButton('Enregistrer')->form(['title'=>'Activité renommée']));self::assertResponseRedirects();
+        $this->client->request('GET','/realisations/'.$slug);self::assertSelectorTextContains('.project-facts','Activité renommée');
+        $crawler=$this->client->request('GET',$categoryUrl);$this->client->submit($crawler->selectButton('Enregistrer')->form(['status'=>'archived']));self::assertResponseRedirects();
+        $this->client->request('GET','/realisations');self::assertSelectorNotExists('[data-project-filter="'.$categoryId.'"]');
+        $this->client->request('GET','/realisations/'.$slug);self::assertResponseIsSuccessful();self::assertSelectorTextNotContains('.project-facts','Activité renommée');
+    }
+    public function testProjectValidationFeaturedSelectionAndOrderedGallery(): void
+    {
+        $this->login();$em=self::getContainer()->get(EntityManagerInterface::class);$projects=$em->getRepository(CmsEntry::class)->findBy(['type'=>'project'],['id'=>'ASC']);
+        $first=$projects[0];$first->data['featured']=true;$em->flush();$firstId=$first->getId();$second=$projects[1];$secondId=$second->getId();$slug=$second->slug;$url=$this->edit($second);
+        $media=$em->getRepository(Media::class)->findBy(['mime'=>'image/jpeg'],[],2);$ids=array_map(fn($m)=>(string)$m->getId(),$media);
+        $crawler=$this->client->request('GET',$url);$data=$crawler->selectButton('Enregistrer')->form()->getPhpValues();$data['data']['categoryId']=(string)$firstId;$data['data']['year']='abc';
+        $this->client->request('POST',$url,$data);self::assertResponseStatusCodeSame(422);
+        $data['data']['categoryId']='';$data['data']['year']='2025';$data['data']['featured']='1';$data['data']['gallery']=array_reverse($ids);
+        $this->client->request('POST',$url,$data);self::assertResponseRedirects();
+        $em=self::getContainer()->get(EntityManagerInterface::class);self::assertFalse($em->find(CmsEntry::class,$firstId)->data['featured']);self::assertTrue($em->find(CmsEntry::class,$secondId)->data['featured']);
+        $crawler=$this->client->request('GET','/realisations/'.$slug);self::assertResponseIsSuccessful();self::assertSame('/media/'.$ids[1].'/variant/photo',$crawler->filter('[data-project-photo]')->first()->attr('href'));self::assertSelectorExists('.project-lightbox');self::assertSelectorNotExists('.project-story h2:contains("Les résultats")');
+        $crawler=$this->client->request('GET',$url);$this->client->submit($crawler->selectButton('Enregistrer')->form(['status'=>'draft']));self::assertResponseRedirects();
+        $this->client->request('GET','/realisations/'.$slug);self::assertResponseStatusCodeSame(404);
+    }
+
 }

@@ -65,3 +65,16 @@ Pour les slides, privilégiez au moins 1920 × 700 px sur ordinateur et 780 × 9
 L’import reste limité aux JPG, PNG, WebP et PDF, à 30 millions de pixels pour les images et à la limite de poids affichée (selon PHP, au maximum 12 Mo).
 
 Le serveur doit disposer de GD avec prise en charge WebP pour générer les variantes ; EXIF permet de redresser les photos JPEG. En l’absence de GD/WebP, le site sert les originaux.
+
+
+### Portfolio des réalisations
+
+La rubrique Réalisations propose une couverture avec cadrage, une activité, un lieu, une année, un client (uniquement si cette information peut être rendue publique), un résumé, le contexte, les travaux et les résultats. Les sections non renseignées sont masquées. Le bandeau de la liste (titre, introduction et image) se modifie dans Bandeaux et référencement → Réalisations.
+
+Les activités se créent et se renomment dans Catégories de réalisations. Le renommage s’applique aux projets associés. Une catégorie archivée est masquée dans les filtres et les fiches, sans dépublier ses projets. Seules les activités publiées utilisées par au moins un projet publié apparaissent dans les filtres.
+
+Cochez « Mettre ce projet à la une » puis publiez-le pour remplacer la sélection précédente. Un brouillon ne remplace pas le projet à la une. Sans sélection explicite, le premier projet publié dans l’ordre d’affichage est présenté.
+
+Ajoutez les photos du projet dans la galerie et utilisez Avancer/Reculer pour organiser leur ordre ; enregistrez ensuite le formulaire. Les visiteurs peuvent agrandir les photos, naviguer avec les boutons ou les flèches du clavier et fermer avec Échap. Les projets similaires sont choisis parmi les projets publiés de la même activité.
+
+Pour une installation à partir des anciens contenus, après `app:cms:import`, exécutez `php bin/console app:cms:organize-projects`. Cette commande peut être rejouée : elle rattache uniquement les projets sans catégorie structurée et conserve les textes, lieux et médias. Faites une sauvegarde de la base avant la première exécution.

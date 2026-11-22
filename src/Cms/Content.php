@@ -28,5 +28,11 @@ final class Content
     }
     public function imageInfo(mixed $id): array { $m=$this->media($id);return $m?$this->images->info($m):[]; }
     public function imageWarning(mixed $id,string $usage): ?string { $m=$this->media($id);return $m?$this->images->warning($m,$usage):null; }
+    public function projectCategory(CmsEntry $project): ?CmsEntry
+    {
+        $id=$project->data['categoryId']??null;
+        $category=is_numeric($id)?$this->em->find(CmsEntry::class,(int)$id):null;
+        return $category?->type==='project_category' && $category->status==='published'?$category:null;
+    }
     public function alt(mixed $id): string { return $this->media($id)?->alt ?? ''; }
 }

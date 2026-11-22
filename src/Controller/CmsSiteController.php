@@ -29,7 +29,7 @@ final class CmsSiteController extends AbstractController
     public function detail(string $type,string $slug,Content $cms): Response
     {
         $entry=$cms->one($type,$slug);if (!$entry) throw $this->createNotFoundException();
-        return $this->render('cms/detail.html.twig',['page'=>$type==='training'?'formation':($type==='service'?'services':'realisations'),'meta'=>$entry,'entry'=>$entry]);
+        return $this->render($type==='project'?'cms/project.html.twig':'cms/detail.html.twig',['page'=>$type==='training'?'formation':($type==='service'?'services':'realisations'),'meta'=>$entry,'entry'=>$entry]);
     }
     #[Route('/service-{slug}',name:'cms_service_legacy',requirements:['slug'=>'[a-z0-9-]+'],methods:['GET'])]
     #[Route('/service-{slug}.html',name:'cms_service_html_legacy',requirements:['slug'=>'[a-z0-9-]+'],methods:['GET'])]
