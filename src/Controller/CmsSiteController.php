@@ -23,6 +23,12 @@ final class CmsSiteController extends AbstractController
         if (!in_array($page,['accueil','services','formation','a-propos','contact','realisations'])) throw $this->createNotFoundException();
         return $this->render('cms/'.$page.'.html.twig',['page'=>$page,'meta'=>$cms->one('page',$page)]);
     }
+    #[Route('/pages/{slug}',name:'cms_custom_page',methods:['GET'])]
+    public function customPage(string $slug,Content $cms): Response
+    {
+        $entry=$cms->one('custom_page',$slug);if (!$entry) throw $this->createNotFoundException();
+        return $this->render('cms/custom_page.html.twig',['page'=>'custom_page','meta'=>$entry,'entry'=>$entry]);
+    }
     #[Route('/services/{slug}',name:'cms_service_detail',defaults:['type'=>'service'],methods:['GET'])]
     #[Route('/formations/{slug}',name:'cms_training_detail',defaults:['type'=>'training'],methods:['GET'])]
     #[Route('/realisations/{slug}',name:'cms_project_detail',defaults:['type'=>'project'],methods:['GET'])]

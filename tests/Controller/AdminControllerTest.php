@@ -36,6 +36,27 @@ final class AdminControllerTest extends WebTestCase
     private function entry(string $type,string $slug='main'): CmsEntry {return self::getContainer()->get(EntityManagerInterface::class)->getRepository(CmsEntry::class)->findOneBy(['type'=>$type,'slug'=>$slug]);}
     private function edit(CmsEntry $entry): string {return '/admin/contenus/'.$entry->type.'/'.$entry->getId().'/modifier';}
     private function login(): void {$this->client->loginUser($this->user);}
+    public function testCustomPagePublicationAndMenuDestinations(): void
+    {
+        $this->login();$em=self::getContainer()->get(EntityManagerInterface::class);$before=$em->getRepository(CmsEntry::class)->count(['type'=>'menu']);
+        $url='/admin/contenus/custom_page/nouveau';$crawler=$this->client->request('GET',$url);
+        $data=$crawler->selectButton('Enregistrer')->form()->getPhpValues();$data['title']='Notre qualité';$data['status']='draft';$data['data']['body']='<p>Notre engagement qualité.</p><script>alert(1)</script>';
+        $this->client->request('POST',$url,$data);self::assertResponseRedirects();$entry=$this->entry('custom_page','notre-qualite');$edit=$this->edit($entry);$id=$entry->getId();
+        self::assertSame($before,self::getContainer()->get(EntityManagerInterface::class)->getRepository(CmsEntry::class)->count(['type'=>'menu']));
+        $this->client->request('GET','/pages/notre-qualite');self::assertResponseStatusCodeSame(404);
+        $this->client->request('GET','/admin/apercu/'.$id);self::assertResponseIsSuccessful();self::assertSelectorTextContains('h1','Notre qualité');self::assertSelectorNotExists('.cms-rich script');
+        $crawler=$this->client->request('GET',$edit);$this->client->submit($crawler->selectButton('Enregistrer')->form(['status'=>'published']));self::assertResponseRedirects($edit);
+        $this->client->request('GET','/pages/notre-qualite');self::assertResponseIsSuccessful();self::assertSelectorTextContains('.cms-rich','Notre engagement qualité.');
+        $url='/admin/contenus/menu/nouveau';$crawler=$this->client->request('GET',$url);$data=$crawler->selectButton('Enregistrer')->form()->getPhpValues();$data['title']='Qualité';$data['status']='published';$data['data']['link']='/pages/notre-qualite';unset($data['data']['header']);$data['data']['footer']='1';
+        $this->client->request('POST',$url,$data);self::assertResponseRedirects();$menuEdit=$this->edit($this->entry('menu','qualite'));
+        $this->client->request('GET','/');self::assertSelectorNotExists('#gmc-navigation a[href="/pages/notre-qualite"]');self::assertSelectorExists('.gmc-footer a[href="/pages/notre-qualite"]');
+        $crawler=$this->client->request('GET',$edit);$this->client->submit($crawler->selectButton('Enregistrer')->form(['status'=>'archived']));self::assertResponseRedirects($edit);
+        $this->client->request('GET','/');self::assertSelectorNotExists('.gmc-footer a[href="/pages/notre-qualite"]');$this->client->request('GET','/pages/notre-qualite');self::assertResponseStatusCodeSame(404);
+        $crawler=$this->client->request('GET',$menuEdit);$data=$crawler->selectButton('Enregistrer')->form()->getPhpValues();$data['data']['link']='/page-inexistante';$this->client->request('POST',$menuEdit,$data);self::assertResponseStatusCodeSame(422);
+        $data['data']['link']='external';$data['data']['externalUrl']='javascript:alert(1)';$this->client->request('POST',$menuEdit,$data);self::assertResponseStatusCodeSame(422);
+        $data['data']['externalUrl']='https://example.org/';$this->client->request('POST',$menuEdit,$data);self::assertResponseRedirects($menuEdit);
+        $this->client->request('GET','/');self::assertSelectorExists('.gmc-footer a[href="https://example.org/"]');
+    }
     public function testAnonymousVisitorsCannotAccessAdminOrPreview(): void
     {
         foreach(['/admin','/admin/contenus/service','/admin/medias','/admin/apercu/1'] as $path){$this->client->request('GET',$path);self::assertResponseRedirects('/admin/connexion');}
@@ -185,6 +206,102 @@ final class AdminControllerTest extends WebTestCase
         $crawler=$this->client->request('GET','/realisations/'.$slug);self::assertResponseIsSuccessful();self::assertSame('/media/'.$ids[1].'/variant/photo',$crawler->filter('[data-project-photo]')->first()->attr('href'));self::assertSelectorExists('.project-lightbox');self::assertSelectorNotExists('.project-story h2:contains("Les résultats")');
         $crawler=$this->client->request('GET',$url);$this->client->submit($crawler->selectButton('Enregistrer')->form(['status'=>'draft']));self::assertResponseRedirects();
         $this->client->request('GET','/realisations/'.$slug);self::assertResponseStatusCodeSame(404);
+    }
+
+    public function testNavigationIncludesPublishedServicesAndActiveParent(): void
+    {
+        $crawler=$this->client->request('GET','/services/construction-metallique');
+        self::assertResponseIsSuccessful();self::assertSelectorExists('.gmc-nav-link[href="/services"][aria-current="location"]');
+        self::assertSelectorExists('.gmc-submenu a[href="/services/construction-metallique"][aria-current="page"]');
+        self::assertSelectorExists('.gmc-contact-link[href="/contact"]');self::assertSelectorExists('a[href="#main-content"]');
+        $em=self::getContainer()->get(EntityManagerInterface::class);$service=$this->entry('service','construction-metallique');$service->status='draft';$em->flush();
+        $this->client->request('GET','/');self::assertSelectorNotExists('.gmc-submenu a[href="/services/construction-metallique"]');
+        $this->client->request('GET','/formations/soudure');self::assertSelectorExists('.gmc-nav-link[href="/formation"][aria-current="location"]');
+    }
+
+    public function testFooterContentCanBeManagedAndOptionalLinksStayHidden(): void
+    {
+        $this->client->request('GET','/');self::assertSelectorExists('.gmc-footer-invite');self::assertSelectorNotExists('.gmc-footer a[href="/mentions-legales"]');
+        $this->login();$url=$this->edit($this->entry('settings'));$crawler=$this->client->request('GET',$url);
+        self::assertTrue($crawler->filter('input[name="data[footerCtaVisible]"]')->attr('checked')!==null);
+        $data=$crawler->selectButton('Enregistrer')->form()->getPhpValues();$data['data']['footerDescription']='Notre présentation personnalisée';$data['data']['footerCtaTitle']='Construisons votre projet';$data['data']['footerCtaButton']='Discutons';$data['data']['footerCtaLink']='/contact';$data['data']['legalUrl']='/mentions-legales';$data['data']['footerCtaVisible']='1';
+        $this->client->request('POST',$url,$data);self::assertResponseRedirects();$this->client->request('GET','/services');
+        self::assertSelectorTextContains('.gmc-footer-brand','Notre présentation personnalisée');self::assertSelectorTextContains('.gmc-footer-invite h2','Construisons votre projet');self::assertSelectorExists('.gmc-footer-button[href="/contact"]');self::assertSelectorExists('.gmc-footer a[href="/mentions-legales"]');
+        $crawler=$this->client->request('GET',$url);$data=$crawler->selectButton('Enregistrer')->form()->getPhpValues();unset($data['data']['footerCtaVisible']);$this->client->request('POST',$url,$data);self::assertResponseRedirects();$this->client->request('GET','/');self::assertSelectorNotExists('.gmc-footer-invite');
+        $em=self::getContainer()->get(EntityManagerInterface::class);$service=$this->entry('service','construction-metallique');$service->status='draft';$em->flush();$this->client->request('GET','/');self::assertSelectorNotExists('.gmc-footer a[href="/services/construction-metallique"]');
+    }
+
+    public function testEveryAdminSectionAndExistingFormCanBeSavedAndPreviewed(): void
+    {
+        $this->login();(new CommandTester(self::getContainer()->get(\App\Command\OrganizeProjectsCommand::class)))->execute([]);
+        $em=self::getContainer()->get(EntityManagerInterface::class);
+        $rows=array_map(fn($e)=>[$e->getId(),$e->type,$e->slug],$em->getRepository(CmsEntry::class)->findAll());
+        foreach(\App\Cms\Schema::TYPES as $type=>$label){
+            $this->client->request('GET','/admin/contenus/'.$type);self::assertResponseIsSuccessful();
+            $this->client->request('GET','/admin/contenus/'.$type.'/nouveau');
+            self::assertResponseStatusCodeSame(in_array($type,\App\Cms\Schema::SINGLE)||$type==='page'?404:200);
+        }
+        foreach($rows as [$id,$type,$slug]){
+            $url='/admin/contenus/'.$type.'/'.$id.'/modifier';$crawler=$this->client->request('GET',$url);self::assertResponseIsSuccessful();
+            $this->client->submit($crawler->selectButton('Enregistrer')->form());$section=$type==='page'?array_search($slug,\App\Cms\Schema::PAGE_SECTIONS,true):false;self::assertResponseRedirects($section!==false?'/admin/contenus/'.$section.'/presentation':$url);
+            $this->client->request('GET','/admin/apercu/'.$id);self::assertResponseIsSuccessful();self::assertResponseHeaderSame('X-Robots-Tag','noindex, nofollow');
+        }
+    }
+    public function testWrongTypeAndSingletonArchiveAreRejected(): void
+    {
+        $this->login();$home=$this->entry('home');$this->client->request('GET','/admin/contenus/service/'.$home->getId().'/modifier');self::assertResponseStatusCodeSame(404);
+        $url=$this->edit($home);$crawler=$this->client->request('GET',$url);$data=$crawler->selectButton('Enregistrer')->form()->getPhpValues();$data['status']='archived';
+        $this->client->request('POST',$url,$data);self::assertResponseStatusCodeSame(422);
+        $this->client->request('GET','/admin/contenus/inconnu');self::assertResponseStatusCodeSame(404);
+        $this->client->request('GET','/admin/contenus/service/999999/modifier');self::assertResponseStatusCodeSame(404);
+    }
+    public function testArchivedMediaIsRetainedButExcludedFromPicker(): void
+    {
+        $this->login();$media=self::getContainer()->get(EntityManagerInterface::class)->getRepository(Media::class)->findOneBy(['mime'=>'image/jpeg']);$id=$media->getId();
+        $crawler=$this->client->request('GET','/admin/medias');$form=$crawler->filter('form[action="/admin/medias/'.$id.'"]')->form();$data=$form->getPhpValues();$data['archived']='1';
+        $this->client->request('POST','/admin/medias/'.$id,$data);self::assertResponseRedirects();
+        $this->client->request('GET','/admin/medias/catalogue');$items=json_decode($this->client->getResponse()->getContent(),true)['items'];self::assertNotContains($id,array_column($items,'id'));
+        self::assertNotNull(self::getContainer()->get(EntityManagerInterface::class)->find(Media::class,$id));
+        $this->client->request('POST','/admin/medias/'.$id,['_token'=>'invalid']);self::assertResponseStatusCodeSame(403);
+    }
+
+    public function testContactPhoneFormattingAndInvalidNumbers(): void
+    {
+        $this->login();$url=$this->edit($this->entry('contact'));$crawler=$this->client->request('GET',$url);$data=$crawler->selectButton('Enregistrer')->form()->getPhpValues();
+        foreach(['(+222) 41 41 40 93','+222 41.41.40.93','41414093'] as $phone){
+            $crawler=$this->client->request('GET',$url);$data=$crawler->selectButton('Enregistrer')->form()->getPhpValues();$data['data']['phone']=$phone;$this->client->request('POST',$url,$data);self::assertResponseRedirects();
+        }
+        foreach(['++++++','(     )','123+456','abc123456'] as $phone){
+            $crawler=$this->client->request('GET',$url);$data=$crawler->selectButton('Enregistrer')->form()->getPhpValues();$data['data']['phone']=$phone;$this->client->request('POST',$url,$data);self::assertResponseStatusCodeSame(422);
+        }
+    }
+    public function testSliderWarningFlashIsVisibleAfterSaving(): void
+    {
+        $this->login();$url=$this->edit($this->entry('slide','slide-1'));$crawler=$this->client->request('GET',$url);$this->client->submit($crawler->selectButton('Enregistrer')->form());self::assertResponseRedirects();$this->client->followRedirect();self::assertSelectorTextContains('.admin-main > .alert-warning','résolution faible');
+    }
+
+    public function testUserGuideIsProtectedAndContainsWorkingSectionLinks(): void
+    {
+        $this->client->request('GET','/admin/guide');self::assertResponseRedirects('/admin/connexion');
+        $this->login();$crawler=$this->client->request('GET','/admin/guide');self::assertResponseIsSuccessful();
+        self::assertSelectorTextContains('h1','Guide d’utilisation');self::assertSelectorExists('[data-print-guide]');self::assertSelectorCount(11,'.guide-section');
+        foreach($crawler->filter('.guide-toc a') as $link){$id=substr($link->getAttribute('href'),1);self::assertSelectorExists('#'.$id);}
+        foreach($crawler->filter('.admin-guide a[href^="/admin/"]')->extract(['href']) as $url){$this->client->request('GET',$url);self::assertResponseIsSuccessful();}
+        $this->client->request('GET','/admin');self::assertSelectorExists('.admin-sidebar a[href="/admin/guide"]');self::assertSelectorExists('.admin-main a[href="/admin/guide"]');
+    }
+
+    public function testPagePresentationIsGroupedAndSearchFieldsAreOptional(): void
+    {
+        $this->client->request('GET','/admin/contenus/service/presentation');self::assertResponseRedirects('/admin/connexion');
+        $this->login();$this->client->request('GET','/admin');self::assertSelectorNotExists('.admin-sidebar a[href="/admin/contenus/page"]');self::assertSelectorNotExists('.admin-main a[href="/admin/contenus/page"]');self::assertSelectorTextContains('.admin-sidebar','Menu du site');
+        foreach(\App\Cms\Schema::PAGE_SECTIONS as $type=>$slug){
+            $this->client->request('GET','/admin/contenus/'.$type);self::assertSelectorExists('a[href="/admin/contenus/'.$type.'/presentation"]');
+            $this->client->request('GET','/admin/contenus/'.$type.'/presentation');self::assertResponseIsSuccessful();self::assertSelectorExists('.admin-sidebar a[href="/admin/contenus/'.$type.'"][aria-current="page"]');self::assertSelectorExists('.admin-advanced:not([open]) input[name="data[seoTitle]"]');
+        }
+        $url='/admin/contenus/service/presentation';$crawler=$this->client->request('GET',$url);$data=$crawler->selectButton('Enregistrer')->form()->getPhpValues();$data['title']='Nos expertises GMC';$data['data']['intro']='Une introduction personnalisée';$data['data']['seoTitle']='';$data['data']['seoDescription']='';
+        $this->client->request('POST',$url,$data);self::assertResponseRedirects($url);$this->client->request('GET','/services');self::assertSelectorTextContains('h1','Nos expertises GMC');self::assertSelectorTextContains('title','Nos expertises GMC');self::assertSelectorExists('meta[name="description"][content="Une introduction personnalisée"]');self::assertSelectorTextContains('.gmc-nav-link[href="/services"]','Services');
+        $crawler=$this->client->request('GET',$url);$data=$crawler->selectButton('Enregistrer')->form()->getPhpValues();$data['data']['seoTitle']=str_repeat('a',501);$this->client->request('POST',$url,$data);self::assertResponseStatusCodeSame(422);self::assertSelectorExists('.admin-advanced[open]');
+        $this->client->request('GET','/admin/contenus/menu/presentation');self::assertResponseStatusCodeSame(404);
     }
 
 }

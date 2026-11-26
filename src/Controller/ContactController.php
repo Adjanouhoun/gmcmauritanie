@@ -18,6 +18,8 @@ final class ContactController
         private readonly TransportInterface $transport,
         private readonly CsrfTokenManagerInterface $csrf,
         #[Autowire('%env(MAILER_DSN)%')] private readonly string $mailerDsn,
+        #[Autowire('%env(MAILER_FROM)%')] private readonly string $mailerFrom,
+        #[Autowire('%env(MAILER_TO)%')] private readonly string $mailerTo,
     ) {}
 
     #[Route('/contact/envoyer', name: 'app_contact_send', methods: ['POST'])]
@@ -39,12 +41,12 @@ final class ContactController
         if (!filter_var($fields['email'], FILTER_VALIDATE_EMAIL) || preg_match('/[\r\n]/', $fields['email'].$fields['name'].$fields['subject'])) {
             return new JsonResponse(['status' => 'error', 'message' => 'Veuillez vérifier votre nom, votre adresse e-mail et le sujet.'], 422);
         }
-        if (str_starts_with($this->mailerDsn, 'null://')) {
-            return new JsonResponse(['status' => 'error', 'message' => 'L’envoi est momentanément indisponible. Contactez-nous directement à contact@gmcmauritanie.com.'], 503);
+        if (str_starts_with($this->mailerDsn, 'null://') || !filter_var($this->mailerFrom, FILTER_VALIDATE_EMAIL) || !filter_var($this->mailerTo, FILTER_VALIDATE_EMAIL)) {
+            return new JsonResponse(['status' => 'error', 'message' => 'L’envoi est momentanément indisponible. Utilisez les coordonnées affichées sur cette page.'], 503);
         }
         $email = (new Email())
-            ->from('contact@gmcmauritanie.com')
-            ->to('contact@gmcmauritanie.com')
+            ->from($this->mailerFrom)
+            ->to($this->mailerTo)
             ->replyTo($fields['email'])
             ->subject('Contact Site Web : '.$fields['subject'])
             ->text("Nom : {$fields['name']}\nE-mail : {$fields['email']}\n\n{$fields['message']}");

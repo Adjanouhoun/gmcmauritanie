@@ -89,3 +89,6 @@
   document.addEventListener('click',event=>{const move=event.target.closest('[data-move-media]');if(!move)return;const card=move.closest('.media-chosen');const neighbor=move.dataset.moveMedia==='up'?card.previousElementSibling:card.nextElementSibling;if(neighbor){if(move.dataset.moveMedia==='up')neighbor.before(card);else neighbor.after(card);}move.focus();});
   document.addEventListener('click',event=>{const button=event.target.closest('[data-remove-media]');if(button)button.closest('.media-chosen').remove();});
 })();
+
+// Expand help answers while printing; restore the reader's choices afterwards.
+(() => {const guide=document.querySelector('.admin-guide');if(!guide)return;let states=[];window.addEventListener('beforeprint',()=>{states=[...guide.querySelectorAll('details')].map(el=>[el,el.open]);states.forEach(([el])=>el.open=true);});window.addEventListener('afterprint',()=>states.forEach(([el,open])=>el.open=open));guide.querySelector('[data-print-guide]')?.addEventListener('click',()=>window.print());})();

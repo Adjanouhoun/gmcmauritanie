@@ -21,6 +21,27 @@ final class Content
         if ($this->preview?->type===$type && $this->preview->slug===$slug) return $this->preview;
         return $this->em->getRepository(CmsEntry::class)->findOneBy(['type'=>$type,'slug'=>$slug,'status'=>'published']);
     }
+    public function destinations(bool $all=false): array
+    {
+        $choices=['/'=>'Accueil','/services'=>'Services','/formation'=>'Formations','/a-propos'=>'À propos','/realisations'=>'Réalisations','/contact'=>'Contact'];
+        foreach (['custom_page'=>'/pages/','service'=>'/services/','training'=>'/formations/','project'=>'/realisations/'] as $type=>$prefix) {
+            foreach ($this->entries($type,$all) as $entry) $choices[$prefix.$entry->slug]=Schema::TYPES[$type].' — '.$entry->title.($entry->status!=='published'?' (non publié)':'');
+        }
+        return $choices;
+    }
+    public function menuEntries(string $placement): array
+    {
+        $destinations=$this->destinations();
+        return array_values(array_filter($this->entries('menu'),static function($item) use ($placement,$destinations) {
+            $link=$item->data['link']??'';
+            $visible=$item->data[$placement]??($placement==='header');
+            return $visible && (isset($destinations[$link]) || self::externalUrl($link));
+        }));
+    }
+    public static function externalUrl(string $url): bool
+    {
+        return (bool) filter_var($url,FILTER_VALIDATE_URL) && in_array(strtolower(parse_url($url,PHP_URL_SCHEME)??''),['http','https'],true);
+    }
     public function media(mixed $id): ?Media { return is_numeric($id) ? $this->em->find(Media::class,(int)$id) : null; }
     public function mediaUrl(mixed $id, string $profile='photo'): string
     {

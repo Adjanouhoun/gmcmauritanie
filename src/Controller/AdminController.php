@@ -15,6 +15,11 @@ final class AdminController extends AbstractController
     }
     #[Route('/admin/deconnexion',name:'admin_logout',methods:['POST'])]
     public function logout(): never { throw new \LogicException('Handled by the firewall.'); }
+    #[Route('/admin/guide',name:'admin_guide',methods:['GET'])]
+    public function guide(): Response
+    {
+        return $this->render('admin/guide.html.twig',['type'=>'guide']);
+    }
     #[Route('/admin',name:'admin_home',methods:['GET'])]
     public function home(Content $cms): Response
     {

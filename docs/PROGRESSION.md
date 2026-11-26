@@ -62,3 +62,67 @@ Pistes à évaluer, non encore validées par l’utilisateur : réduire la haute
 3. Proposer une structure précise du menu et son comportement ordinateur/mobile avant d’implémenter une refonte.
 
 Le réglage temporaire de largeur du navigateur a été réinitialisé à la consolidation. Aucun contenu de test de la recette du portfolio n’a été enregistré dans les formulaires.
+
+
+## Navigation — 25 novembre 2026
+
+En-tête compact et fixe, bouton Contactez-nous, navigation mobile dépliable avec fermeture Échap, lien d’évitement et repères actifs conservés sur les fiches. Services propose les prestations publiées ; Formations reste un accès direct au catalogue.
+
+Dans Administration → Navigation, le titre sert notamment au pied de page ; le nouveau champ « Libellé dans le menu principal » permet un intitulé différent dans l’en-tête. L’ordre reste modifiable. Le sous-menu est associé à la destination /services et le bouton de contact à /contact.
+
+Validation : 26 tests, 189 assertions ; menu mobile et sous-menu contrôlés avec Échap, navigation vers une fiche et repère Services vérifiés. Sauvegarde des réglages avant modification dans var/backups/before-navigation-*.db. Le premier écran conserve encore des titres de test et devra être finalisé avec les vrais contenus.
+
+
+## Pied de page — 25 novembre 2026
+
+Pied de page harmonisé avec la navigation : appel à contact, identité, navigation, services publiés et coordonnées. Sur mobile, les colonnes se superposent sans débordement. Les titres, la présentation, le bouton et sa destination sont modifiables dans Identité du site. L’appel à contact peut être masqué. Les liens du menu conservent leur option « Afficher aussi dans le pied de page ».
+
+Téléphones, adresse, e-mail, WhatsApp et horaires proviennent de Contact ; réseaux sociaux et liens légaux de Identité du site. Les éléments facultatifs non renseignés sont masqués. Les liens légaux ne créent pas de pages : renseigner uniquement des destinations existantes.
+
+Validation : 27 tests réussis, 202 assertions ; aperçu ordinateur et mobile à 390 px vérifié.
+
+
+## Vérification de l’administration — 25 novembre 2026
+
+- Suite complète : 32 tests réussis, 546 assertions. Les formulaires et aperçus de toutes les rubriques existantes ont été ouverts et enregistrés sur une base SQLite isolée.
+- Contrôles : connexion/déconnexion, accès anonyme, CSRF, validations, brouillons/publication/archivage, modifications concurrentes, aperçus, médias archivés et importés, catégories, galeries, menu et pied de page.
+- Deux défauts corrigés : le téléphone existant au format (+222) bloquait l’enregistrement de Contact ; les messages d’avertissement serveur n’étaient pas rendus par le modèle d’administration. Des tests de non-régression couvrent les corrections.
+- Base réelle contrôlée en lecture seule : intégrité SQLite OK, 60 contenus. Aucun contenu réel modifié pendant cette recette.
+- Limite : le navigateur est déconnecté de l’administration. La redirection vers la connexion a été vérifiée, mais les interactions JavaScript authentifiées n’ont pas été rejouées lors de cette session. Les tests navigateur précédents restent documentés ci-dessus.
+
+
+## Guide utilisateur — 26 novembre 2026
+
+Guide intégré à /admin/guide, protégé par la connexion administrateur. Accès depuis le menu latéral et le tableau de bord. Dix sections couvrent la première modification, publication/aperçu, rubriques, services/formations, médias, slider, réalisations, navigation/pied de page, dépannage et vérifications finales.
+
+Sommaire avec ancres, liens directs vers les rubriques, questions dépliables et commande d’impression/enregistrement PDF via le navigateur. Les réponses sont développées pendant l’impression puis leur état est restauré.
+
+Validation automatisée : 33 tests, 588 assertions ; accès protégé, rendu authentifié, dix sections, ancres et liens internes contrôlés. Syntaxe Twig et JavaScript valide. Impression et mise en page du guide non vérifiées visuellement en session connectée.
+
+
+## Administration simplifiée — 26 novembre 2026
+
+Navigation renommée Menu du site. Présentation des pages rattachée aux rubriques via des onglets ; rubrique page retirée du menu et du tableau de bord, anciennes routes conservées. Route dédiée : /admin/contenus/{section}/presentation. Accueil dispose de Titre et options (sans bandeau inutilisé). Référencement regroupé dans un volet Options avancées, fermé par défaut et ouvert en cas d’erreur. Guide utilisateur actualisé.
+
+Validation : 34 tests réussis, 629 assertions. Contrôles des routes protégées, liens d’accès, contexte actif, sauvegarde, conservation des libellés du menu et valeurs de référencement par défaut. Aucun changement de contenu en base réelle. Recette visuelle connectée non effectuée pour cette simplification.
+
+
+## Pages libres et destinations du menu — 26 novembre 2026
+
+La rubrique Pages libres permet de créer des pages supplémentaires à l’adresse `/pages/{slug}` : titre, introduction, image facultative, texte mis en forme et référencement facultatif. Brouillon, aperçu privé, publication et archivage sont disponibles. L’adresse reste stable après création. Aucun lien de menu n’est créé automatiquement.
+
+Dans Menu du site, choisir une destination publiée dans la liste (rubrique fixe, service, formation, réalisation ou page libre), ou Site externe avec une URL HTTP(S) complète. L’affichage dans le menu principal et le pied de page est indépendant. Les liens vers un contenu non publié sont masqués automatiquement. Les destinations existantes reconnues restent compatibles sans migration de données. Les adresses internes arbitraires ne sont plus acceptées.
+
+Validation : 35 tests, 657 assertions ; 45 modèles Twig et conteneur Symfony valides. Le parcours création, aperçu, publication, pied de page, archivage et validation des destinations est couvert avec une base isolée. Aucune modification des contenus réels et aucun déploiement. Vérification visuelle de l’administration connectée non effectuée.
+
+
+## Recette visuelle et préparation SMTP LWS — 26 novembre 2026
+
+- Recette sur copie SQLite indépendante avec compte temporaire : connexion, création d’une page, saisie enrichie, recherche/sélection d’image, aperçu privé, publication, lien au pied de page seul, archivage avec masquage du lien, onglets de présentation et déconnexion contrôlés dans le navigateur.
+- Affichages ordinateur 1440 px et mobile 390 px contrôlés ; formulaire, médiathèque et guide sans débordement horizontal. La fenêtre d’impression native du guide n’a pas pu être contrôlée dans le navigateur intégré : validation PDF encore nécessaire.
+- Correction du texte d’aide des sites externes, numérotation des onze sections du guide et suppression des requêtes répétées pour chaque destination du menu.
+- Formulaire contact testé depuis le navigateur vers un récepteur SMTP local : réception complète, en-têtes, Reply-To et accents validés. Récepteur arrêté : message d’erreur visible, saisie conservée et bouton réactivé.
+- Expéditeur/destinataire configurables par environnement. Commande `app:configure-lws-mail` avec saisie masquée sans repli visible, encodage du mot de passe, écriture protégée de `.env.local` et conservation des autres variables. Modèle LWS sans secret versionné. Serveur communiqué : mail28.lwspanel.com, port 465 avec SSL/TLS.
+- Validation : 39 tests, 678 assertions ; Twig, conteneur Symfony et syntaxe JavaScript valides. Tests supplémentaires de configuration et de non-divulgation des secrets.
+- Aucun contenu réel changé pendant la recette. Données de recette uniquement dans /tmp. Aucun déploiement.
+- Envoi LWS réel : configuration privée en cours de saisie par l’utilisateur ; réception externe non encore confirmée à ce point de contrôle.
