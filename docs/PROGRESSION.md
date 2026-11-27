@@ -128,3 +128,8 @@ Validation : 35 tests, 657 assertions ; 45 modèles Twig et conteneur Symfony va
 - Configuration LWS effectuée par l’utilisateur avec la commande masquée. Serveur confirmé mail28.lwspanel.com, transport SMTPS actif. Test réel par POST du formulaire /contact/envoyer : HTTP 200, message accepté par LWS. Sujet : « Validation du formulaire GMC — 26 novembre 2026 ». Réception confirmée par l’utilisateur dans la boîte de réception, hors indésirables. Le parcours navigateur → application → SMTP LWS → boîte de réception est validé.
 - Sauvegarde privée dans var/backups/recette-20261126 : base SQLite intègre, archive du code et des médias vérifiée sans secrets. Aucun contenu de recette dans la base réelle.
 - Commit c8ff778 poussé sur origin/refonte-symfony avec le commit précédent 03b633d. Configuration privée .env.local conservée uniquement sur cette machine. Les serveurs temporaires de recette ont été arrêtés.
+
+
+## Guide utilisateur actualisé — 26 novembre 2026
+
+Douze sections : création des pages libres détaillée, choix et visibilité des liens de menu, distinction retrait du lien/retrait de la page, liens légaux et liens manuels, réception et traitement des demandes LWS, dépannage des destinations et consignes d’impression. Les instructions techniques SMTP restent dans ADMINISTRATION.md. La validation LWS locale est distinguée du futur contrôle après déploiement.

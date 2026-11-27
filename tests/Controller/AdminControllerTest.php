@@ -284,7 +284,7 @@ final class AdminControllerTest extends WebTestCase
     {
         $this->client->request('GET','/admin/guide');self::assertResponseRedirects('/admin/connexion');
         $this->login();$crawler=$this->client->request('GET','/admin/guide');self::assertResponseIsSuccessful();
-        self::assertSelectorTextContains('h1','Guide d’utilisation');self::assertSelectorExists('[data-print-guide]');self::assertSelectorCount(11,'.guide-section');
+        self::assertSelectorTextContains('h1','Guide d’utilisation');self::assertSelectorExists('[data-print-guide]');self::assertSelectorCount(12,'.guide-section');
         foreach($crawler->filter('.guide-toc a') as $link){$id=substr($link->getAttribute('href'),1);self::assertSelectorExists('#'.$id);}
         foreach($crawler->filter('.admin-guide a[href^="/admin/"]')->extract(['href']) as $url){$this->client->request('GET',$url);self::assertResponseIsSuccessful();}
         $this->client->request('GET','/admin');self::assertSelectorExists('.admin-sidebar a[href="/admin/guide"]');self::assertSelectorExists('.admin-main a[href="/admin/guide"]');
